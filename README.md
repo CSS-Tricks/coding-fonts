@@ -1,5 +1,10 @@
 # Coding Fonts
 
+The plan:
+
+1. Take 6 screenshots of each font in the below list. One for HTML, CSS, and JS in a Dark Theme and a Light Theme.
+1. Make some kind of nice little site or article or something out of it.
+
 - Fira Code Mono – https://github.com/tonsky/FiraCode
 - Iosevka – be5invis.github.io/iosevka
 - SF Mono – https://developer.apple.com/fonts/
