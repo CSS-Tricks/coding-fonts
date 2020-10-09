@@ -8,6 +8,9 @@ const puppeteer = require("puppeteer");
 
   const page = await browser.newPage();
 
+  // Make High Res
+  await page.setViewport({ width: 800, height: 600, deviceScaleFactor: 2 });
+
   await page.goto(
     `http://localhost:5000/samples/${argv.lang}?font=${argv.font}&theme=${argv.theme}`
   );
