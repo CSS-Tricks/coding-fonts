@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "serve": "serve"
+    "serve": "serve",
+    "screenshots": "node take_screenshots.js --lang html --font 'Fira Code' --theme light"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,8 @@
   },
   "homepage": "https://github.com/chriscoyier/coding-fonts#readme",
   "dependencies": {
+    "minimist": "^1.2.5",
+    "puppeteer": "^5.3.1",
     "serve": "^11.3.2"
   }
 }
