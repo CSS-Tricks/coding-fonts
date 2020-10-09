@@ -1,0 +1,25 @@
+{
+  "name": "coding-fonts",
+  "version": "1.0.0",
+  "description": "Some kind of visual look at coding fonts",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "serve": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chriscoyier/coding-fonts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chriscoyier/coding-fonts/issues"
+  },
+  "homepage": "https://github.com/chriscoyier/coding-fonts#readme",
+  "dependencies": {
+    "serve": "^11.3.2"
+  }
+}
