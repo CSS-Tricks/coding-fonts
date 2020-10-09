@@ -8,7 +8,7 @@
   },
   "scripts": {
     "serve": "serve",
-    "screenshots": "node take_screenshots.js --lang html --font 'Fira Code' --theme light"
+    "screenshots": "node take_screenshots.js --lang html --font 'Fira Code' --theme light && node take_screenshots.js --lang html --font 'Fira Code' --theme dark"
   },
   "repository": {
     "type": "git",

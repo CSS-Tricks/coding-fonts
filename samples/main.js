@@ -19,6 +19,16 @@
 
   // Set the font
   const font = urlParams.get("font");
-  const pre = document.querySelector("pre");
-  pre.style.fontFamily = font;
+  const code = document.querySelector("pre > code");
+
+  if (font === "Fira Code") {
+    const head = document.getElementsByTagName("head")[0];
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = "/fonts/Fira_Code_v5.2/fira_code.css";
+    link.media = "all";
+    head.appendChild(link);
+    code.style.fontFamily = "Fira Code";
+  }
 })();
