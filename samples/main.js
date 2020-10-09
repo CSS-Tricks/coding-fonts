@@ -30,5 +30,8 @@
     link.media = "all";
     head.appendChild(link);
     code.style.fontFamily = "Fira Code";
+  } else if (font === "Operator Mono") {
+    // Not free/open source, so assumes is locally active
+    code.style.fontFamily = "Operator Mono";
   }
 })();
