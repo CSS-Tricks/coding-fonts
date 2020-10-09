@@ -1,59 +1,9 @@
-:root {
-  --font-color: #272727;
-  --bg-color: #FFFFFF;
-}
-
-[data-theme="dark"] {
-  --font-color: #FFFFFF;
-  --bg-color: #322f3d;
-}
-
 body {
-  background-color: var(--bg-color);
-  color: var(--font-color);
-  max-width: 90%;
-  margin: 0 auto;
-  font-size: calc(1rem + 0.25vh);
+  margin: 0;
+  overflow: hidden;
 }
-
-h1{
-  font-size: 2rem;
-  margin-bottom: 1vh;
+pre {
+  padding: 1.5rem 2rem !important;
+  margin: 0 !important;
+  height: 100vh;
 }
-
-p {
-  font-size: 1.1rem;
-  line-height: 1.6rem;
-}
-
-section {
-  max-width: 68%;
-  margin: 0 auto;
-}
-
-.date {
-  font-size: 1rem;
-  font-style: italic;
-}
-
-header {
-  display: flex;
-  width: 100%;
-  flex-direction: row-reverse;
-}
-
-button {
-  outline: none;
-  border: none;
-  display: flex;
-  justify-content: center;
-  border-radius: 4rem;
-  padding: 0.3rem;
-  width: 48px;
-  background-color: var(--font-color);
-  margin: 0.5rem;
-}
-
-button:hover { cursor: pointer }
-.moon::before { content: '\1F31C' }
-.sun::before { content: '\1F31E' }
