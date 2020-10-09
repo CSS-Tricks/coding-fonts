@@ -11,6 +11,9 @@ const puppeteer = require("puppeteer");
   // Make High Res
   await page.setViewport({ width: 800, height: 600, deviceScaleFactor: 2 });
 
+  // Time to load stuff
+  await page.waitFor(1 * 1000);
+
   await page.goto(
     `http://localhost:5000/samples/${argv.lang}?font=${argv.font}&theme=${argv.theme}`
   );
