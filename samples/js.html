@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html>
-   <head>
-     <meta charset="utf-8">
-     <meta content="width=device-width,initial-scale=1" name="viewport">
-     <title>HTML Example</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>HTML Example</title>
 
-     <link href="../lib/prism.css" rel="stylesheet" />
+    <link href="../lib/prism.css" rel="stylesheet" />
+    <link href="../style.css" rel="stylesheet" />
   </head>
   <body>
-    <section>
-      <pre>
-        <code class="lang-js">
-  const toggleButton = document.querySelector('header button');
+    <pre class="lang-js"><code>(function() {
+  
+  const toggleButton = document.querySelector('#module > button');
   const currentTheme = localStorage.getItem('theme');
 
   if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
     if (currentTheme === 'dark') {
-      toggleButton.setAttribute('class', 'moon');
+        toggleButton.setAttribute('class', 'moon');
     }
   }
 
   function switchTheme() {
     const theme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
     const icon = theme === 'dark' ? 'moon' : 'sun';
-    const removeIcon = theme === 'dark' ? 'sun' : 'moon';
-
+  
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
-    toggleButton.removeAttribute('class', removeIcon);
-    toggleButton.setAttribute('class', icon);
   }
 
   toggleButton.addEventListener('click', switchTheme, false);
-        </code>
-      </pre>
-    </section>
+  
+})();</code></pre>
 
-    <script src="../lib/prism.js"> </script>
+    <script src="../lib/prism.js"></script>
+    <script src="../main.js"></script>
   </body>
 </html>

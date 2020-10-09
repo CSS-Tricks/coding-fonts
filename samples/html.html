@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html>
-   <head>
-     <meta charset="utf-8">
-     <meta content="width=device-width,initial-scale=1" name="viewport">
-     <title>HTML Example</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>HTML Example</title>
 
-     <link href="../lib/prism.css" rel="stylesheet" />
+    <link href="../lib/prism.css" rel="stylesheet" />
+    <link href="../style.css" rel="stylesheet" />
   </head>
   <body>
-    <section>
-      <script type="text/plain" class="language-markup">
-  <html>
-    <head>
-      <meta charset="utf-8">
-      <meta content="width=device-width,initial-scale=1" name="viewport">
-      <title>HTML Example</title>
-    </head>
+    <pre class="language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;utf-8&quot;&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+      &lt;link href=&quot;styles.css&quot; rel=&quot;stylesheet&quot;&gt;
+      &lt;title&gt;Hello, World!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+        &lt;a href=&quot;/&quot; class=&quot;logo&quot;&gt;
+          World Corp
+        &lt;/a&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+      &lt;article class=&quot;post&quot; data-article-id=&quot;1&quot;&gt;
+        &lt;h1&gt;Hello from World Corp&lt;/h1&gt;
+        &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry...&lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/main&gt;
+    &lt;script async src=&quot;main.js&quot;&gt; &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
 
-    <body>
-      <header>
-        <button class="sun"></button>
-      </header>
-      <section>
-        <article class="post">
-          <h1> Lorem Ipsum </h1>
-          <p class="date"> Apr, 1500</p>
-          <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
-        </article>
-      </section>
-    </body>
-  </html>
-        </script>
-    </section>
-
-    <script src="../lib/prism.js"> </script>
+    <script src="../lib/prism.js"></script>
+    <script src="../main.js"></script>
   </body>
 </html>
