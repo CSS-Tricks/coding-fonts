@@ -32,5 +32,10 @@
   } else if (font === "Operator Mono") {
     // Not free/open source, so assumes is locally active
     code.style.fontFamily = "Operator Mono";
+  } else if (font === "Ubuntu Mono") {
+    injectStylesheet(
+      "https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&display=swap"
+    );
+    code.style.fontFamily = "Ubuntu Mono";
   }
 })();
