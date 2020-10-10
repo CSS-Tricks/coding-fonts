@@ -3,7 +3,7 @@
 ## The Plan
 
 1. Take 6 screenshots of each font in the below list. One for HTML, CSS, and JS in a Dark Theme and a Light Theme.
-1. Make some kind of nice little site or article or something out of it.
+1. Make a nice little microsite at coding-fonts.css-tricks.com
 
 ## The List
 
@@ -49,8 +49,21 @@
 - MonaLisa – https://monolisa.dev/
 - Aglet Mono – https://xyztype.com/fonts/aglet_mono
 
-## Not On List On Purpose
+### Not On List On Purpose
 
 - PragmataPro – https://fsd.it/shop/fonts/pragmatapro/
 - Dank – https://dank.sh (deprecated project)
 - Courier (ubituitous monospace font, but nobody seems to actually use it for coding)
+
+## Running this site.
+
+- `npm install`
+- `npm run serve`
+
+## Taking Screenshots
+
+- Server must be running.
+- If the font is open source, put a copy of the font in the `fonts` folder.
+- Make a stylesheet that gets that font ready to use in that font folder
+- See `samples/main.js` for how to get service ready to shoot that font. It injects the stylesheet and sets the font.
+- Run script like `FONT='Fira Code' npm run screenshots`
