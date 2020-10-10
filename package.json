@@ -8,7 +8,10 @@
   },
   "scripts": {
     "serve": "serve",
-    "screenshots": "node take_screenshots.js --lang js --font 'Fira Code' --theme light && node take_screenshots.js --lang js --font 'Fira Code' --theme dark"
+    "screenshots": "npm run screenshots:js && npm run screenshots:html && npm run screenshots:css",
+    "screenshots:js": "node take_screenshots.js --lang js --theme light --font \"$FONT\" && node take_screenshots.js --lang js --theme dark --font \"$FONT\"",
+    "screenshots:html": "node take_screenshots.js --lang html --theme light --font \"$FONT\" && node take_screenshots.js --lang html --theme dark --font \"$FONT\"",
+    "screenshots:css": "node take_screenshots.js --lang css --theme light --font \"$FONT\" && node take_screenshots.js --lang css --theme dark --font \"$FONT\""
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,7 @@
   },
   "homepage": "https://github.com/chriscoyier/coding-fonts#readme",
   "dependencies": {
+    "fs": "0.0.1-security",
     "minimist": "^1.2.5",
     "puppeteer": "^5.3.1",
     "serve": "^11.3.2"
