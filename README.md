@@ -9,8 +9,8 @@
 
 ### Free
 
-- Fira Code Mono – https://github.com/tonsky/FiraCode
-- Iosevka – be5invis.github.io/iosevka
+- Fira Code – https://github.com/tonsky/FiraCode
+- Iosevka – https://github.com/be5invis/Iosevka
 - SF Mono – https://developer.apple.com/fonts/
 - Cascadia Code – https://github.com/microsoft/cascadia-code
 - Ubuntu Mono
