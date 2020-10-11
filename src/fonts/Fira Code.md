@@ -1,18 +1,18 @@
 ---
-layout: font
 title: Fira Code
+layout: index
 designers:
   - name: Nikita Prokopov
 home_url: https://github.com/tonsky/FiraCode
-license: 
+license:
   - name: OFL-1.1 License
-     url: https://github.com/tonsky/FiraCode/blob/master/LICENSE
+    url: https://github.com/tonsky/FiraCode/blob/master/LICENSE
 cost: free
-support: 
+support:
   - name: Patreon
-     url: https://www.patreon.com/tonsky
+    url: https://www.patreon.com/tonsky
   - name: GitHub Sponsors
-     url: https://github.com/sponsors/tonsky
+    url: https://github.com/sponsors/tonsky
 ligatures: optional
 ---
 

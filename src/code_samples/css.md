@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width,initial-scale=1" name="viewport" />
-    <title>HTML Example</title>
+---
+layout: for_screenshot
+title: CSS Sample
+---
 
-    <link href="../style.css" rel="stylesheet" />
-  </head>
-  <body>
-    <pre class="lang-css"><code>body {
+<pre class="lang-css"><code>body {
   --bg-color: #FFFFFF;
   background-color: var(--bg-color);
   max-width: 90%;
@@ -31,8 +26,3 @@ button {
 button[data-type="moon"]::before {
   content: '\1F31C';
 }</code></pre>
-
-    <script src="../lib/prism.js"></script>
-    <script src="main.js"></script>
-  </body>
-</html>

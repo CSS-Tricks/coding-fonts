@@ -1,6 +1,6 @@
 ---
-layout: font
 title: Menlo
+layout: index
 designers:
   - name: Jim Lyles
 home_url:

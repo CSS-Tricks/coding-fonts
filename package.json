@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "serve": "serve",
+    "serve": "eleventy --serve",
     "screenshots": "npm run screenshots:js && npm run screenshots:html && npm run screenshots:css",
     "screenshots:js": "node take_screenshots.js --lang js --theme light --font \"$FONT\" && node take_screenshots.js --lang js --theme dark --font \"$FONT\"",
     "screenshots:html": "node take_screenshots.js --lang html --theme light --font \"$FONT\" && node take_screenshots.js --lang html --theme dark --font \"$FONT\"",
@@ -26,7 +26,9 @@
   "dependencies": {
     "fs": "0.0.1-security",
     "minimist": "^1.2.5",
-    "puppeteer": "^5.3.1",
-    "serve": "^11.3.2"
+    "puppeteer": "^5.3.1"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0"
   }
 }

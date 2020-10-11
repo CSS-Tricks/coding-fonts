@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width,initial-scale=1" name="viewport" />
-    <title>HTML Example</title>
+---
+layout: for_screenshot
+title: JavaScript Sample
+---
 
-    <link href="../style.css" rel="stylesheet" />
-  </head>
-  <body>
-    <pre class="lang-js"><code>(function() {
+<pre class="lang-js"><code>(function() {
   // Init
   const toggleButton = document.querySelector('#module > button');
   const currentTheme = localStorage.getItem('theme');
@@ -31,8 +26,3 @@
   toggleButton.addEventListener('click', switchTheme, false);
   
 })();</code></pre>
-
-    <script src="../lib/prism.js"></script>
-    <script src="main.js"></script>
-  </body>
-</html>

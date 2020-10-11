@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width,initial-scale=1" name="viewport" />
-    <title>HTML Example</title>
+---
+layout: for_screenshot
+title: HTML Sample
+---
 
-    <link href="../style.css" rel="stylesheet" />
-  </head>
-  <body>
-    <pre class="language-markup"><code>&lt;!DOCTYPE html&gt;
+<pre class="language-markup"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
     &lt;head&gt;
       &lt;meta charset=&quot;utf-8&quot;&gt;
@@ -31,8 +26,3 @@
     &lt;script async src=&quot;main.js&quot;&gt; &lt;/script&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-
-    <script src="../lib/prism.js"></script>
-    <script src="main.js"></script>
-  </body>
-</html>

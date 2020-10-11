@@ -1,12 +1,12 @@
 ---
-layout: font
 title: Anonymous Pro
+layout: index
 designers:
   - name: Mark Simonson
 home_url: https://www.marksimonson.com/fonts/view/anonymous-pro
-license: 
+license:
   - name: Open Font License
-     url: https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+    url: https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 cost: free
 ligatures: false
 ---
