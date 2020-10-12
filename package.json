@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "serve": "eleventy --serve",
+    "serve": "eleventy --serve & npm run sass:watch",
+    "sass:watch": "sass --watch src/assets/styles/sass/style.scss src/assets/styles/style.css",
     "screenshots": "npm run screenshots:js && npm run screenshots:html && npm run screenshots:css",
     "screenshots:js": "node take_screenshots.js --lang js --theme light --font \"$FONT\" && node take_screenshots.js --lang js --theme dark --font \"$FONT\"",
     "screenshots:html": "node take_screenshots.js --lang html --theme light --font \"$FONT\" && node take_screenshots.js --lang html --theme dark --font \"$FONT\"",
@@ -29,6 +30,7 @@
     "puppeteer": "^5.3.1"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0"
+    "@11ty/eleventy": "^0.11.0",
+    "sass": "^1.27.0"
   }
 }
