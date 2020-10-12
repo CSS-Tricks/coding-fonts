@@ -2,14 +2,113 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Whitney A", "Whitney B", system-ui, sans-serif;
-  margin: 0;
+html {
+  --bg-main: #333333;
+  --bg-dark: #2D2D2D;
+  --bg-light: #424242;
+  --highlight: #FF006A;
+  --bg-highlight: #2E141E;
+  --body: #9B9B9B;
+  --body-dark: #848484;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Ringside Regular SSm A", "Ringside Regular SSm B", system-ui,
-    sans-serif;
+body {
+  --bg: var(--bg-main);
+  --text: var(--body);
+  font-family: "Ringside Regular SSm A", "Ringside Regular SSm B", system-ui, sans-serif;
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
 }
+
+a, a:visited {
+  color: var(--highlight);
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+@media screen and (min-width: 800px) {
+  .site-wrapper {
+    flex-direction: row;
+  }
+  .site-wrapper > * {
+    flex-grow: 0;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .sidebar {
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-basis: 256px;
+    flex-shrink: 0;
+  }
+  .sidebar header {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.screenshot-wrapper {
+  width: 628px;
+  max-width: 100%;
+  position: relative;
+}
+.screenshot-wrapper picture {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+[value=light]:not(:checked) ~ .screenshot-controls [data-theme=light] {
+  opacity: 0.5;
+}
+[value=light]:not(:checked) ~ .screenshot-wrapper [data-theme=light] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+[value=dark]:not(:checked) ~ .screenshot-controls [data-theme=dark] {
+  opacity: 0.5;
+}
+[value=dark]:not(:checked) ~ .screenshot-wrapper [data-theme=dark] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+[value=html]:not(:checked) ~ .screenshot-controls [data-language=html] {
+  opacity: 0.5;
+}
+[value=html]:not(:checked) ~ .screenshot-wrapper [data-language=html] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+[value=css]:not(:checked) ~ .screenshot-controls [data-language=css] {
+  opacity: 0.5;
+}
+[value=css]:not(:checked) ~ .screenshot-wrapper [data-language=css] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+[value=js]:not(:checked) ~ .screenshot-controls [data-language=js] {
+  opacity: 0.5;
+}
+[value=js]:not(:checked) ~ .screenshot-wrapper [data-language=js] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/*# sourceMappingURL=style.css.map */

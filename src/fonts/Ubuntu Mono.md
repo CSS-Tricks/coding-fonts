@@ -1,6 +1,5 @@
 ---
 title: Ubuntu Mono
-layout: index
 designers:
   - name:
 home_url:

@@ -1,0 +1,38 @@
+---
+layout: base
+---
+{# TODO: store theme and language in localstorage and read on page load #}
+<section class="screenshot-stage">
+  {%- for theme in samples.themes -%}
+    <input type="radio" hidden name="theme" value="{{theme}}" id="control-theme-{{theme}}" {{ 'checked' if loop.index === 1 }}>
+  {%- endfor -%}
+  {%- for language in samples.languages -%}
+    <input type="radio" hidden name="language" value="{{language.value}}" id="control-language-{{language.value}}" {{ 'checked' if loop.index === 1 }}>
+  {%- endfor -%}
+  <header class="screenshot-controls">
+    <div class="controls language-controls">
+      {%- for language in samples.languages -%}
+        <label for="control-language-{{language.value}}" class="visually-hidden" data-language="{{language.value}}">{{language.label}}</label>
+      {%- endfor -%}
+    </div>
+    <div class="controls theme-controls">
+      {%- for theme in samples.themes -%}
+        <label for="control-theme-{{theme}}" class="visually-hidden" data-theme="{{theme}}">{{theme}}</label>
+      {%- endfor -%}
+    </div>
+  </header>
+  <div class="screenshot-wrapper">
+    {%- for theme in samples.themes -%}
+      {%- for language in samples.languages -%}
+        <picture data-theme="{{theme}}" data-language="{{language.value}}">
+          {# TODO: add responsive sources #}
+          <img src="/screenshots/{{title}}/{{language.value}}-{{theme}}.png">
+        </picture>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="details">
+
+</section>

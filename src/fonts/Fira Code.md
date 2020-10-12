@@ -1,6 +1,5 @@
 ---
 title: Fira Code
-layout: index
 designers:
   - name: Nikita Prokopov
 home_url: https://github.com/tonsky/FiraCode
