@@ -1,9 +1,15 @@
-body {
-  margin: 0;
-  overflow: hidden;
+* {
+  box-sizing: border-box;
 }
-pre {
-  padding: 1.5rem 2rem !important;
-  margin: 0 !important;
-  height: 100vh;
+
+body {
+  font-family: "Whitney A", "Whitney B", system-ui, sans-serif;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Ringside Regular SSm A", "Ringside Regular SSm B", system-ui,
+    sans-serif;
 }

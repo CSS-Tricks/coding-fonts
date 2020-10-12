@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+pre {
+  padding: 1.5rem 2rem !important;
+  margin: 0 !important;
+  height: 100vh;
+}
