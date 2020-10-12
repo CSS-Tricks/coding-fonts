@@ -1,6 +1,6 @@
 ---
 title: Coding Fonts
-layout: index
+layout: base
 ---
 
 This is the homepage.

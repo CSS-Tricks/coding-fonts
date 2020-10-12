@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link
+      rel="stylesheet"
+      href="https://cloud.typography.com/610186/6080612/css/fonts.css"
+    />
+    <link rel="stylesheet" href="/assets/styles/style.css"/>
+    <title>Coding Fonts{{' — ' + title if title}}</title>
+  </head>
+
+  <body>
+    <div class="site-wrapper">
+      <aside class="sidebar">
+        <header>
+          <h1>Coding Fonts</h1>
+        </header>
+        {% block nav %}
+          {% include "./components/fonts-nav.njk" %}
+        {% endblock nav %}
+      </aside>
+      <main>
+        {% block main %}
+          {{ content | safe }}
+        {% endblock main %}
+      </main>
+    </div>
+  </body>
+</html>

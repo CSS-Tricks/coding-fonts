@@ -1,0 +1,9 @@
+<nav class="fonts-nav">
+  <ul>
+      {%- for font in collections.fonts -%}
+        <li>
+          <a href="{{ font.url }}">{{ font.data.title }}</a>
+        </li>
+      {%- endfor -%}
+    </ul>
+</nav>

@@ -1,6 +1,5 @@
 ---
 title: Anonymous Pro
-layout: index
 designers:
   - name: Mark Simonson
 home_url: https://www.marksimonson.com/fonts/view/anonymous-pro

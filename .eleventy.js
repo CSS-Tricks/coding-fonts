@@ -3,7 +3,7 @@ module.exports = function (config) {
   config.addPassthroughCopy("src/screenshots");
 
   config.addCollection("fonts", function (collection) {
-    let fonts = collection.getFilteredByGlob("src/fonts/*.md");
+    let fonts = collection.getFilteredByGlob("src/fonts/*.md"); 
     return fonts;
   });
 
@@ -12,6 +12,7 @@ module.exports = function (config) {
       input: "src",
       output: "dist",
       includes: "_includes",
+      data: "_data",
     },
     passthroughFileCopy: true,
     templateFormats: ["njk", "md"],
