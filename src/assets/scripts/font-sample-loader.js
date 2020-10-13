@@ -41,4 +41,9 @@ if (font === "Fira Code") {
     "https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital@0;1&display=swap"
   );
   code.style.fontFamily = "Anonymous Pro";
+} else if (font === "JetBrains Mono") {
+  injectStylesheet(
+    "../../assets/fonts/jetbrains-mono/jetbrains-mono.css"
+  );
+  code.style.fontFamily = "JetBrains Mono";
 }
