@@ -1,14 +1,40 @@
 ---
 layout: base
 ---
-{# TODO: store theme and language in localstorage and read on page load #}
+
 <section class="screenshot-stage">
   {%- for theme in samples.themes -%}
-    <input type="radio" hidden name="theme" value="{{theme}}" id="control-theme-{{theme}}" {{ 'checked' if loop.index === 1 }}>
+    <input type="radio" 
+    hidden 
+    name="theme" 
+    value="{{theme}}" 
+    id="control-theme-{{theme}}" 
+    {{ 'checked' if loop.index === 1 }}
+    oninput="setUrlQueryParam(this.name, this.value)"
+    >
   {%- endfor -%}
   {%- for language in samples.languages -%}
-    <input type="radio" hidden name="language" value="{{language.value}}" id="control-language-{{language.value}}" {{ 'checked' if loop.index === 1 }}>
+    <input type="radio" 
+    hidden 
+    name="language" 
+    value="{{language.value}}" 
+    id="control-language-{{language.value}}" 
+    {{ 'checked' if loop.index === 1 }}
+    oninput="setUrlQueryParam(this.name, this.value)"
+    >
   {%- endfor -%}
+  <script>
+    // set screenshot state just before loading images
+    var params = new URLSearchParams(location.search),
+        theme = params.get('theme'),
+        language = params.get('language');
+
+    if (theme)
+      document.getElementById('control-theme-' + theme).checked = true;
+
+    if (language)
+      document.getElementById('control-language-' + language).checked = true;
+  </script>
   <header class="screenshot-controls">
     <div class="controls language-controls">
       {%- for language in samples.languages -%}
