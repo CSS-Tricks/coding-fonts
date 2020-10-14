@@ -10,7 +10,7 @@ layout: base
     value="{{theme}}" 
     id="control-theme-{{theme}}" 
     {{ 'checked' if loop.index === 1 }}
-    oninput="setUrlQueryParam(this.name, this.value)"
+    oninput="setUrlParam(this.name, this.value)"
     >
   {%- endfor -%}
   {%- for language in samples.languages -%}
@@ -20,7 +20,7 @@ layout: base
     value="{{language.value}}" 
     id="control-language-{{language.value}}" 
     {{ 'checked' if loop.index === 1 }}
-    oninput="setUrlQueryParam(this.name, this.value)"
+    oninput="setUrlParam(this.name, this.value)"
     >
   {%- endfor -%}
   <script>
