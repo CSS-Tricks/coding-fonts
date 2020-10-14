@@ -1,5 +1,4 @@
 ---
-title: Coding Fonts
 layout: base
 ---
 

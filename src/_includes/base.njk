@@ -21,7 +21,7 @@
           {% include "./components/fonts-nav.njk" %}
         {% endblock nav %}
       </aside>
-      <main data-site-main>
+      <main data-site-main class="{{ layout }} {{ page.fileSlug | slug }}">
         {% block main %}
           {{ content | safe }}
         {% endblock main %}

@@ -51,7 +51,7 @@ function setupAjaxNavigation () {
         var title = response.title || '',
             $main = response.querySelector('[data-site-main]');
         if ($main) {
-          document.querySelector('[data-site-main]').innerHTML = $main.innerHTML;
+          document.querySelector('[data-site-main]').outerHTML = $main.outerHTML;
           history.pushState({}, title, href);
           document.title = title;
           setStateFromUrlParams();

@@ -60,5 +60,19 @@ layout: base
 </section>
 
 <section class="details">
-
+  <h2>{{ title }}</h2>
+  {%- if designers and designers.length -%}
+    <p>
+      <span>Designed by </span>
+      {%- for designer in designers -%}
+        <span class="comma-list-item">{{ designer.name }}</span>
+      {%- endfor -%}
+    </p>
+  {%- endif -%}
+  {%- if home_url -%}
+    <a href="{{ home_url }} ">{{ home_url }}</a>
+  {%- endif -%}
+  {%- if content -%}
+    {{ content | safe }}
+  {%- endif -%}
 </section>
