@@ -1,4 +1,4 @@
-function setUrlQueryParam (key, value) { 
+function setUrlParam (key, value) { 
   var params = new URLSearchParams(location.search);
   params.set(key, value);
   var paramsString = '?' + params.toString();
@@ -7,7 +7,7 @@ function setUrlQueryParam (key, value) {
 }
 
 function setUrlParamsForAllLinks (key, value) {
-  document.querySelectorAll('.fonts-nav a').forEach(function ($a) { 
+  document.querySelectorAll('[data-nav-item]').forEach(function ($a) { 
       try {
         var url = new URL($a.href);
         url.searchParams.set(key, value);
@@ -18,16 +18,60 @@ function setUrlParamsForAllLinks (key, value) {
     });
 }
 
-window.addEventListener('load', function () {
+function setStateFromUrlParams () {
   var params = new URLSearchParams(location.search),
       theme = params.get('theme'),
       language = params.get('language');
-
-  if (theme)
+      
+  if (theme) {
     setUrlParamsForAllLinks('theme', theme);
+    document.getElementById('control-theme-' + theme).checked = true;
+  }
+  
+  if (language) {
+    setUrlParamsForAllLinks('language', language);
+    document.getElementById('control-language-' + language).checked = true;
+  }
+}
 
-  if (language)
-    setUrlParamsForAllLinks('language', language)
+function setupAjaxNavigation () {
+  // riffing off https://github.com/terabaud/eleventy-mini-spa/
+  document.querySelectorAll('[data-nav-item]').forEach(function ($a) { 
+    $a.addEventListener('click', function(event) {
+      var href = $a.href;
+      function revertToRegularNavigation () {
+        location.href = href;
+      }
+
+      event.preventDefault();
+      var xhr = new XMLHttpRequest();
+
+      xhr.onload = function () {
+        var response = xhr.responseXML;
+        var title = response.title || '',
+            $main = response.querySelector('[data-site-main]');
+        if ($main) {
+          document.querySelector('[data-site-main]').innerHTML = $main.innerHTML;
+          history.pushState({}, title, href);
+          document.title = title;
+          setStateFromUrlParams();
+        } else {
+          revertToRegularNavigation();
+        }
+      }
+
+      xhr.onerror = revertToRegularNavigation;
+
+      xhr.open('GET', href);
+      xhr.responseType = 'document';
+      xhr.send();
+    })
+  })
+}
+
+window.addEventListener('load', function () {
+  setStateFromUrlParams();
+  setupAjaxNavigation();
 })
 
 // TODO: polyfill URLSearchParams for IE11? (https://github.com/jerrybendy/url-search-params-polyfill)
