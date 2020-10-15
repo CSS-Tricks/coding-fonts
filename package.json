@@ -27,6 +27,7 @@
   "dependencies": {
     "fs": "0.0.1-security",
     "minimist": "^1.2.5",
+    "prettier": "^2.1.2",
     "puppeteer": "^5.3.1"
   },
   "devDependencies": {
