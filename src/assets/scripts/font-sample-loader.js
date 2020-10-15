@@ -47,4 +47,13 @@ if (font === "Fira Code") {
 } else if (font === "FiraFlott") {
   injectStylesheet("../../assets/fonts/FiraFlott/woff/stylesheet.css");
   code.style.fontFamily = "firaflott";
+} else if (font === "Menlo") {
+  injectStylesheet("../../assets/fonts/Menlo/menlo.css");
+  code.style.fontFamily = "Menlo";
+} else if (font === "Hasklig") {
+  injectStylesheet("../../assets/fonts/Hasklig-1.1/stylesheet.css");
+  code.style.fontFamily = "hasklig";
+} else if (font === "Iosevka") {
+  injectStylesheet("../../assets/fonts/iosevka/stylesheet.css");
+  code.style.fontFamily = "Iosevka";
 }
