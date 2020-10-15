@@ -42,8 +42,9 @@ if (font === "Fira Code") {
   );
   code.style.fontFamily = "Anonymous Pro";
 } else if (font === "JetBrains Mono") {
-  injectStylesheet(
-    "../../assets/fonts/jetbrains-mono/jetbrains-mono.css"
-  );
+  injectStylesheet("../../assets/fonts/jetbrains-mono/jetbrains-mono.css");
   code.style.fontFamily = "JetBrains Mono";
+} else if (font === "FiraFlott") {
+  injectStylesheet("../../assets/fonts/FiraFlott/woff/stylesheet.css");
+  code.style.fontFamily = "firaflott";
 }

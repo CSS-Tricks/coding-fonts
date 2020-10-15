@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "firaflott";
+  src: url("firaflott_firacode_medium-webfont.woff2") format("woff2"),
+    url("firaflott_firacode_medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "firaflott";
+  src: url("firaflott_flottflott_italic-webfont.woff2") format("woff2"),
+    url("firaflott_flottflott_italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
