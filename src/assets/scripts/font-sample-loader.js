@@ -1,10 +1,10 @@
 function injectStylesheet(url) {
-  const head = document.getElementsByTagName("head")[0];
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.type = "text/css";
+  const head = document.getElementsByTagName('head')[0];
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
   link.href = url;
-  link.media = "all";
+  link.media = 'all';
   head.appendChild(link);
 }
 
@@ -14,31 +14,31 @@ const urlParams = new URLSearchParams(queryString);
 
 // Set the stylesheet
 let stylesheet;
-if (urlParams.get("theme") === "dark") {
-  stylesheet = "../../assets/styles/prism-dark.css";
+if (urlParams.get('theme') === 'dark') {
+  stylesheet = '../../assets/styles/prism-dark.css';
 } else {
-  stylesheet = "../../assets/styles/prism-light.css";
+  stylesheet = '../../assets/styles/prism-light.css';
 }
 injectStylesheet(stylesheet);
 
 // Set the font
-const font = urlParams.get("font");
-const code = document.querySelector("pre > code");
+const font = urlParams.get('font');
+const code = document.querySelector('pre > code');
 
-if (font === "Fira Code") {
-  injectStylesheet("../../assets/fonts/Fira_Code_v5.2/fira_code.css");
-  code.style.fontFamily = "Fira Code";
-} else if (font === "Operator Mono") {
+if (font === 'Fira Code') {
+  injectStylesheet('../../assets/fonts/Fira_Code_v5.2/fira_code.css');
+  code.style.fontFamily = 'Fira Code';
+} else if (font === 'Operator Mono') {
   // Not free/open source, so assumes is locally active
-  code.style.fontFamily = "Operator Mono";
-} else if (font === "Ubuntu Mono") {
+  code.style.fontFamily = 'Operator Mono';
+} else if (font === 'Ubuntu Mono') {
   injectStylesheet(
-    "https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&display=swap"
+    'https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&display=swap'
   );
-  code.style.fontFamily = "Ubuntu Mono";
-} else if (font === "Anonymous Pro") {
+  code.style.fontFamily = 'Ubuntu Mono';
+} else if (font === 'Anonymous Pro') {
   injectStylesheet(
-    "https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital@0;1&display=swap"
+    'https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital@0;1&display=swap'
   );
   code.style.fontFamily = "Anonymous Pro";
 } else if (font === "JetBrains Mono") {
