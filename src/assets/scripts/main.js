@@ -54,6 +54,10 @@ function setupAjaxNavigation () {
           document.querySelector('[data-site-main]').outerHTML = $main.outerHTML;
           history.pushState({}, title, href);
           document.title = title;
+          document.querySelectorAll('[data-nav-item]').forEach(function ($a) {
+            $a.classList.toggle('active', $a.href === href)
+          })
+          window.scrollTo({ behavior: 'smooth', top: 0 });
           setStateFromUrlParams();
         } else {
           revertToRegularNavigation();

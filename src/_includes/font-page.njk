@@ -38,12 +38,12 @@ layout: base
   <header class="screenshot-controls">
     <div class="controls language-controls">
       {%- for language in samples.languages -%}
-        <label for="control-language-{{language.value}}" class="visually-hidden" data-language="{{language.value}}">{{language.label}}</label>
+        <label for="control-language-{{language.value}}" data-language="{{language.value}}">{{language.label}}</label>
       {%- endfor -%}
     </div>
     <div class="controls theme-controls">
       {%- for theme in samples.themes -%}
-        <label for="control-theme-{{theme}}" class="visually-hidden" data-theme="{{theme}}">{{theme}}</label>
+        <label for="control-theme-{{theme}}" data-theme="{{theme}}" aria-label="{{theme}}"></label>
       {%- endfor -%}
     </div>
   </header>
@@ -61,8 +61,8 @@ layout: base
 
 <section class="details">
   <h2>{{ title }}</h2>
-  {%- if designers and designers.length -%}
-    <p>
+  {%- if designers and designers.length and designers[0].name -%}
+    <p class="designers">
       <span>Designed by </span>
       {%- for designer in designers -%}
         <span class="comma-list-item">{{ designer.name }}</span>
@@ -75,4 +75,9 @@ layout: base
   {%- if content -%}
     {{ content | safe }}
   {%- endif -%}
+  <ul class="features">
+    <li><h3>Cost</h3><span>{{ cost or 'free' }}</span></li>
+    <li><h3>Coding ligatures</h3><span class="icon {{ 'v' if ligatures else 'x' }}" area-label="{{ 'yes' if ligatures else 'no' }}"></span></li>
+    <li><h3>Italics</h3><span class="icon {{ 'v' if italics else 'x' }}" area-label="{{ 'yes' if italics else 'no' }}"></span></li>
+  </ul>
 </section>
