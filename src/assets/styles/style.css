@@ -54,14 +54,20 @@ img {
   height: auto;
 }
 
+.comma-list-item {
+  font-style: inherit;
+}
 .comma-list-item:not(:last-child):after {
   content: ", ";
 }
 .comma-list-item:nth-last-child(2):after {
   content: " ";
 }
-.comma-list-item:last-child:not(:first-child):not(:last-child):before {
+.comma-list-item:last-child:not(:first-of-type):before {
   content: "and ";
+}
+.comma-list-item:last-child:first-child:before {
+  content: "";
 }
 
 .site-wrapper {

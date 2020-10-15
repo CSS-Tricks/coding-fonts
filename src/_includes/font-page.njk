@@ -26,14 +26,18 @@ layout: base
   <script>
     // set screenshot state just before loading images
     var params = new URLSearchParams(location.search),
-        theme = params.get('theme'),
-        language = params.get('language');
+      theme = params.get('theme'),
+      language = params.get('language');
 
-    if (theme)
-      document.getElementById('control-theme-' + theme).checked = true;
-
-    if (language)
-      document.getElementById('control-language-' + language).checked = true;
+    if (theme) 
+      document
+        .getElementById('control-theme-' + theme)
+        .checked = true;
+    
+    if (language) 
+      document
+        .getElementById('control-language-' + language)
+        .checked = true;
   </script>
   <header class="screenshot-controls">
     <div class="controls language-controls">
@@ -65,7 +69,7 @@ layout: base
     <p class="designers">
       <span>Designed by </span>
       {%- for designer in designers -%}
-        <span class="comma-list-item">{{ designer.name }}</span>
+        <i class="comma-list-item">{{ designer.name }}</i>
       {%- endfor -%}
     </p>
   {%- endif -%}

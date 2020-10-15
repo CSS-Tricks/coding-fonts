@@ -61,6 +61,8 @@ img {
 }
 
 .comma-list-item {
+  font-style: inherit;
+
   &:not(:last-child) {
     &:after {
       content: ', '
@@ -73,9 +75,15 @@ img {
     }
   }
   
-  &:last-child:not(:first-child):not(:last-child) {
+  &:last-child:not(:first-of-type) {
     &:before {
       content: 'and '
+    }
+  }
+
+  &:last-child:first-child {
+    &:before {
+      content: '';
     }
   }
 }
