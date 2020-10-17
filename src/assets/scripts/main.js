@@ -57,7 +57,8 @@ function goto (href) {
       setTimeout(function () {
         document.body.classList.remove('no-transition');
       }, 100)
-      onPageLoad();
+      setStateFromUrlParams();
+      setupLanguageControlsStyle();
     } else {
       revertToRegularNavigation();
     }
@@ -97,14 +98,10 @@ function setupLanguageControlsStyle () {
   })
 }
 
-function onPageLoad () {
-  setupAjaxNavigation();
-  setupLanguageControlsStyle();
-}
-
 window.addEventListener('load', function () {
+  setupAjaxNavigation();
   setStateFromUrlParams();
-  onPageLoad();
+  setupLanguageControlsStyle();
 })
 
 // TODO: polyfill URLSearchParams for IE11? (https://github.com/jerrybendy/url-search-params-polyfill)
