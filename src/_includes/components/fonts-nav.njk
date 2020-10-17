@@ -1,9 +1,9 @@
 <nav class="fonts-nav">
   <ul>
-      {%- for font in collections.fonts -%}
-        <li>
-          <a href="{{ font.url }}">{{ font.data.title }}</a>
-        </li>
-      {%- endfor -%}
-    </ul>
+    {%- for font in collections.fonts -%}
+      <li class="fonts-nav-item" style="--i: {{ loop.index }}">
+        <a class="fonts-nav-link {{ 'active' if font.url === page.url }}" href="{{ font.url }}" data-nav-item>{{ font.data.title }}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
 </nav>

@@ -1,5 +1,17 @@
 @mixin large {
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 1366px) {
+    @content
+  }
+}
+
+@mixin medium {
+  @media screen and (min-width: 900px) {
+    @content
+  }
+}
+
+@mixin only-small {
+  @media screen and (max-width: 400px) {
     @content
   }
 }
