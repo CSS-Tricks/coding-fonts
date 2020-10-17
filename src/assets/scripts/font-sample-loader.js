@@ -40,20 +40,20 @@ if (font === 'Fira Code') {
   injectStylesheet(
     'https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital@0;1&display=swap'
   );
-  code.style.fontFamily = "Anonymous Pro";
-} else if (font === "JetBrains Mono") {
-  injectStylesheet("../../assets/fonts/jetbrains-mono/jetbrains-mono.css");
-  code.style.fontFamily = "JetBrains Mono";
-} else if (font === "FiraFlott") {
-  injectStylesheet("../../assets/fonts/FiraFlott/woff/stylesheet.css");
-  code.style.fontFamily = "firaflott";
-} else if (font === "Menlo") {
-  injectStylesheet("../../assets/fonts/Menlo/menlo.css");
-  code.style.fontFamily = "Menlo";
-} else if (font === "Hasklig") {
-  injectStylesheet("../../assets/fonts/Hasklig-1.1/stylesheet.css");
-  code.style.fontFamily = "hasklig";
-} else if (font === "Iosevka") {
-  injectStylesheet("../../assets/fonts/iosevka/stylesheet.css");
-  code.style.fontFamily = "Iosevka";
+  code.style.fontFamily = 'Anonymous Pro';
+} else if (font === 'JetBrains Mono') {
+  injectStylesheet('../../assets/fonts/jetbrains-mono/jetbrains-mono.css');
+  code.style.fontFamily = 'JetBrains Mono';
+} else if (font === 'FiraFlott') {
+  injectStylesheet('../../assets/fonts/FiraFlott/woff/stylesheet.css');
+  code.style.fontFamily = 'firaflott';
+} else if (font === 'Menlo') {
+  injectStylesheet('../../assets/fonts/Menlo/menlo.css');
+  code.style.fontFamily = 'Menlo';
+} else if (font === 'Hasklig') {
+  injectStylesheet('../../assets/fonts/Hasklig-1.1/stylesheet.css');
+  code.style.fontFamily = 'hasklig';
+} else if (font === 'Iosevka') {
+  injectStylesheet('../../assets/fonts/iosevka/stylesheet.css');
+  code.style.fontFamily = 'Iosevka';
 }
