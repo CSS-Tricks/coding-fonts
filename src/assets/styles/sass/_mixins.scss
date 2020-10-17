@@ -9,3 +9,9 @@
     @content
   }
 }
+
+@mixin only-small {
+  @media screen and (max-width: 400px) {
+    @content
+  }
+}

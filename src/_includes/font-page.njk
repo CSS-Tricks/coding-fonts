@@ -2,27 +2,27 @@
 layout: base
 ---
 
+{%- for theme in samples.themes -%}
+  <input type="radio" 
+  hidden 
+  name="theme" 
+  value="{{theme}}" 
+  id="control-theme-{{theme}}" 
+  {{ 'checked' if loop.index === 1 }}
+  oninput="setUrlParam(this.name, this.value)"
+  >
+{%- endfor -%}
+{%- for language in samples.languages -%}
+  <input type="radio" 
+  hidden 
+  name="language" 
+  value="{{language.value}}" 
+  id="control-language-{{language.value}}" 
+  {{ 'checked' if loop.index === 1 }}
+  oninput="setUrlParam(this.name, this.value)"
+  >
+{%- endfor -%}
 <section class="screenshot-stage">
-  {%- for theme in samples.themes -%}
-    <input type="radio" 
-    hidden 
-    name="theme" 
-    value="{{theme}}" 
-    id="control-theme-{{theme}}" 
-    {{ 'checked' if loop.index === 1 }}
-    oninput="setUrlParam(this.name, this.value)"
-    >
-  {%- endfor -%}
-  {%- for language in samples.languages -%}
-    <input type="radio" 
-    hidden 
-    name="language" 
-    value="{{language.value}}" 
-    id="control-language-{{language.value}}" 
-    {{ 'checked' if loop.index === 1 }}
-    oninput="setUrlParam(this.name, this.value)"
-    >
-  {%- endfor -%}
   <script>
     // set screenshot state just before loading images
     var params = new URLSearchParams(location.search),
@@ -39,7 +39,7 @@ layout: base
         .getElementById('control-language-' + language)
         .checked = true;
   </script>
-  <header class="screenshot-controls">
+  <header class="screenshot-controls" id="screenshot-controls">
     <div class="controls language-controls">
       {%- for language in samples.languages -%}
         <label for="control-language-{{language.value}}" data-language="{{language.value}}">{{language.label}}</label>
@@ -54,19 +54,23 @@ layout: base
   <div class="screenshot-wrapper">
     {%- for theme in samples.themes -%}
       {%- for language in samples.languages -%}
-        <picture data-theme="{{theme}}" data-language="{{language.value}}">
-          {# TODO: add responsive sources #}
-          <img src="/screenshots/{{title}}/{{language.value}}-{{theme}}.png">
-        </picture>
+        <div class="screenshot" data-theme="{{theme}}" data-language="{{language.value}}">
+          <picture>
+            {# TODO: add responsive sources #}
+            <img src="/screenshots/{{title}}/{{language.value}}-{{theme}}.png">
+          </picture>
+        </div>
       {%- endfor -%}
     {%- endfor -%}
   </div>
 </section>
 
+{%- set i = 1 -%}
 <section class="details">
   <h2>{{ title }}</h2>
   {%- if designers and designers.length and designers[0].name -%}
-    <p class="designers">
+    <p class="designers enter" style="--i: {{ i }}">
+      {%- set i = i + 1 -%}
       <span>Designed by </span>
       {%- for designer in designers -%}
         <i class="comma-list-item">{{ designer.name }}</i>
@@ -74,20 +78,30 @@ layout: base
     </p>
   {%- endif -%}
   {%- if home_url -%}
-    <a href="{{ home_url }} ">{{ home_url }}</a>
+    <a href="{{ home_url }}" class="enter" style="--i: {{ i }}">{{ home_url }}</a>
+    {%- set i = i + 1 -%}
   {%- endif -%}
   {%- if content -%}
-    {{ content | safe }}
+    <div class="description enter" style="--i: {{ i }}">
+      {%- set i = i + 1 -%}
+      {{ content | safe }}
+    </div>
   {%- endif -%}
   <ul class="features">
-    <li>
+    <li class="enter" style="--i: {{ i }}">
+      {%- set i = i + 1 -%}
       <h3>Cost</h3>
-      <span>{{ cost or 'free' }}</span></li>
-    <li>
+      <span>{{ cost or 'free' }}</span>
+    </li>
+    <li class="enter" style="--i: {{ i }}">
+      {%- set i = i + 1 -%}
       <h3>Coding ligatures</h3>
-      <span class="icon {{ 'v' if ligatures else 'x' }}" area-label="{{ 'yes' if ligatures else 'no' }}"></span></li>
-    <li>
+      <span class="icon {{ 'v' if ligatures else 'x' }}" area-label="{{ 'yes' if ligatures else 'no' }}"></span>
+    </li>
+    <li class="enter" style="--i: {{ i }}">
+      {%- set i = i + 1 -%}
       <h3>Italics</h3>
-      <span class="icon {{ 'v' if italics else 'x' }}" area-label="{{ 'yes' if italics else 'no' }}"></span></li>
+      <span class="icon {{ 'v' if italics else 'x' }}" area-label="{{ 'yes' if italics else 'no' }}"></span>
+    </li>
   </ul>
 </section>

@@ -39,6 +39,10 @@ function setupAjaxNavigation () {
   document.querySelectorAll('[data-nav-item]').forEach(function ($a) { 
     $a.addEventListener('click', function(event) {
       var href = $a.href;
+      if (href === location.href) {
+        event.preventDefault();
+        return
+      }
       function revertToRegularNavigation () {
         location.href = href;
       }
@@ -51,14 +55,19 @@ function setupAjaxNavigation () {
         var title = response.title || '',
             $main = response.querySelector('[data-site-main]');
         if ($main) {
-          document.querySelector('[data-site-main]').outerHTML = $main.outerHTML;
+          document.querySelector('[data-site-main]').innerHTML = $main.innerHTML;
           history.pushState({}, title, href);
           document.title = title;
           document.querySelectorAll('[data-nav-item]').forEach(function ($a) {
             $a.classList.toggle('active', $a.href === href)
           })
           window.scrollTo({ behavior: 'smooth', top: 0 });
+          document.body.classList.add('no-transition');
+          setTimeout(function () {
+            document.body.classList.remove('no-transition');
+          }, 100)
           setStateFromUrlParams();
+          setupLanguageControlsStyle();
         } else {
           revertToRegularNavigation();
         }
@@ -73,9 +82,21 @@ function setupAjaxNavigation () {
   })
 }
 
+function setupLanguageControlsStyle () {
+  document.querySelectorAll('label[data-language').forEach(function ($control, i) {
+    if (i === 0) {
+      $control.parentNode.classList.add('with-widths')
+    }
+
+    $control.parentNode.style.setProperty('--width-' + $control.dataset.language, $control.clientWidth + 'px');
+    $control.parentNode.style.setProperty('--left-' + $control.dataset.language, $control.offsetLeft + 'px');
+  })
+}
+
 window.addEventListener('load', function () {
   setStateFromUrlParams();
   setupAjaxNavigation();
+  setupLanguageControlsStyle();
 })
 
 // TODO: polyfill URLSearchParams for IE11? (https://github.com/jerrybendy/url-search-params-polyfill)
