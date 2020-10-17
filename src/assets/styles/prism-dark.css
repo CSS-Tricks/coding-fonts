@@ -1,123 +1,180 @@
-/* PrismJS 1.21.0
-https://prismjs.com/download.html?themes#themes=prism-tomorrow&languages=markup+css+clike+javascript */
-/**
- * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
- * Based on https://github.com/chriskempson/tomorrow-theme
- * @author Rose Pritchard
- */
+/*
 
-code[class*="language-"],
-pre[class*="language-"] {
-  color: #ccc;
-  background: none;
-  font-size: 1em;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
+Colors Only:
 
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
+https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-material-oceanic.css
 
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
+*/
+
+pre[class*='language-'] {
+  color: #c3cee3;
+  background: #263238;
 }
 
-/* Code blocks */
-pre[class*="language-"] {
-  padding: 1em;
-  margin: 0.5em 0;
-  overflow: auto;
+code[class*='language-']::-moz-selection,
+pre[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection,
+pre[class*='language-'] ::-moz-selection {
+  background: #363636;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  background: #2d2d2d;
+code[class*='language-']::selection,
+pre[class*='language-']::selection,
+code[class*='language-'] ::selection,
+pre[class*='language-'] ::selection {
+  background: #363636;
 }
 
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-  padding: 0.1em;
-  border-radius: 0.3em;
-  white-space: normal;
+.language-css > code,
+.language-sass > code,
+.language-scss > code {
+  color: #fd9170;
 }
 
-.token.comment,
-.token.block-comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: #999;
-  font-style: italic;
+.token.atrule {
+  color: #c792ea;
 }
 
-.token.punctuation {
-  color: #ccc;
+.token.attr-name {
+  color: #ffcb6b;
 }
 
-.token.tag,
-.token.attr-name,
-.token.namespace,
-.token.deleted {
-  color: #e2777a;
+.token.attr-value {
+  color: #c3e88d;
 }
 
-.token.function-name {
-  color: #6196cc;
+.token.attribute {
+  color: #c3e88d;
 }
 
-.token.boolean,
-.token.number,
-.token.function {
-  color: #f08d49;
+.token.boolean {
+  color: #c792ea;
 }
 
-.token.property,
-.token.class-name,
-.token.constant,
-.token.symbol {
-  color: #f8c555;
-}
-
-.token.selector,
-.token.important,
-.token.atrule,
-.token.keyword,
 .token.builtin {
-  color: #cc99cd;
+  color: #ffcb6b;
 }
 
-.token.string,
-.token.char,
-.token.attr-value,
-.token.regex,
-.token.variable {
-  color: #7ec699;
+.token.cdata {
+  color: #80cbc4;
 }
 
-.token.operator,
-.token.entity,
-.token.url {
-  color: #67cdcc;
+.token.char {
+  color: #80cbc4;
 }
 
-.token.important,
-.token.bold {
-  font-weight: bold;
+.token.class {
+  color: #ffcb6b;
 }
-.token.italic {
-  font-style: italic;
+
+.token.class-name {
+  color: #f2ff00;
+}
+
+.token.color {
+  color: #f2ff00;
+}
+
+.token.comment {
+  color: #546e7a;
+}
+
+.token.constant {
+  color: #c792ea;
+}
+
+.token.deleted {
+  color: #f07178;
+}
+
+.token.doctype {
+  color: #546e7a;
 }
 
 .token.entity {
-  cursor: help;
+  color: #f07178;
+}
+
+.token.function {
+  color: #c792ea;
+}
+
+.token.hexcode {
+  color: #f2ff00;
+}
+
+.token.id {
+  color: #c792ea;
+}
+
+.token.important {
+  color: #c792ea;
 }
 
 .token.inserted {
-  color: green;
+  color: #80cbc4;
+}
+
+.token.keyword {
+  color: #c792ea;
+}
+
+.token.number {
+  color: #fd9170;
+}
+
+.token.operator {
+  color: #89ddff;
+}
+
+.token.prolog {
+  color: #546e7a;
+}
+
+.token.property {
+  color: #80cbc4;
+}
+
+.token.pseudo-class {
+  color: #c3e88d;
+}
+
+.token.pseudo-element {
+  color: #c3e88d;
+}
+
+.token.punctuation {
+  color: #89ddff;
+}
+
+.token.regex {
+  color: #f2ff00;
+}
+
+.token.selector {
+  color: #f07178;
+}
+
+.token.string {
+  color: #c3e88d;
+}
+
+.token.symbol {
+  color: #c792ea;
+}
+
+.token.tag {
+  color: #f07178;
+}
+
+.token.unit {
+  color: #f07178;
+}
+
+.token.url {
+  color: #fd9170;
+}
+
+.token.variable {
+  color: #f07178;
 }
