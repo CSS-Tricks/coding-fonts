@@ -1,5 +1,3 @@
 ---
-layout: base
+layout: index
 ---
-
-This is the homepage.

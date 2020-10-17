@@ -227,12 +227,12 @@ a.fonts-nav-link.active:after {
 }
 
 @media screen and (min-width: 900px) {
-  main.font-page {
+  main {
     flex: 1;
   }
 }
 @media screen and (min-width: 1366px) {
-  main.font-page {
+  main {
     display: flex;
     margin-top: 72px;
     align-self: flex-start;

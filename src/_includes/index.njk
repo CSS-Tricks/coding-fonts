@@ -1,81 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cloud.typography.com/610186/6080612/css/fonts.css"
-    />
-    <link rel="stylesheet" href="./assets/styles/style.css" />
-    <title>Coding Fonts</title>
-  </head>
+---
+layout: base
+---
 
-  <body>
-    <h1>Coding Fonts</h1>
-
-    <ul>
-      {%- for font in collections.fonts -%}
-      <li>
-        <a href="{{ font.url }}">{{ font.data.title }}</a>
-        <ul>
-          <li>
-            <a href="/code_samples/html?font={{ font.data.title }}&theme=dark"
-              >HTML Dark</a
-            >
-            -
-            <a href="/screenshots/{{ font.data.title }}/html-dark.png"
-              >(screenshot)</a
-            >
-          </li>
-          <li>
-            <a href="/code_samples/html?font={{ font.data.title }}&theme=light"
-              >HTML Light</a
-            >
-            -
-            <a href="/screenshots/{{ font.data.title }}/html-light.png"
-              >(screenshot)</a
-            >
-          </li>
-          <li>
-            <a href="/code_samples/css?font={{ font.data.title }}&theme=dark"
-              >CSS Dark</a
-            >
-            -
-            <a href="/screenshots/{{ font.data.title }}/css-dark.png"
-              >(screenshot)</a
-            >
-          </li>
-          <li>
-            <a href="/code_samples/css?font={{ font.data.title }}&theme=light"
-              >CSS Light</a
-            >
-            -
-            <a href="/screenshots/{{ font.data.title }}/css-light.png"
-              >(screenshot)</a
-            >
-          </li>
-          <li>
-            <a href="/code_samples/js?font={{ font.data.title }}&theme=dark"
-              >JS Dark</a
-            >
-            -
-            <a href="/screenshots/{{ font.data.title }}/js-dark.png"
-              >(screenshot)</a
-            >
-          </li>
-          <li>
-            <a href="/code_samples/js?font={{ font.data.title }}&theme=light"
-              >JS Light</a
-            >
-            -
-            <a href="/screenshots/{{ font.data.title }}/js-light.png"
-              >(screenshot)</a
-            >
-          </li>
-        </ul>
-      </li>
-      {%- endfor -%}
-    </ul>
-  </body>
-</html>
+<script>
+  window.addEventListener('load', function () {
+    goto('{{ collections.fonts[0].url }}')
+  })
+</script>

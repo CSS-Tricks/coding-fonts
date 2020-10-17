@@ -34,6 +34,42 @@ function setStateFromUrlParams () {
   }
 }
 
+function goto (href) {
+  function revertToRegularNavigation () {
+    location.href = href;
+  }
+
+  var xhr = new XMLHttpRequest();
+  
+  xhr.onload = function () {
+    var response = xhr.responseXML;
+    var title = response.title || '',
+        $main = response.querySelector('[data-site-main]');
+    if ($main) {
+      document.querySelector('[data-site-main]').innerHTML = $main.innerHTML;
+      history.pushState({}, title, href);
+      document.title = title;
+      document.querySelectorAll('[data-nav-item]').forEach(function ($a) {
+        $a.classList.toggle('active', $a.href === href || $a.getAttribute('href') === href)
+      })
+      window.scrollTo({ behavior: 'smooth', top: 0 });
+      document.body.classList.add('no-transition');
+      setTimeout(function () {
+        document.body.classList.remove('no-transition');
+      }, 100)
+      onPageLoad();
+    } else {
+      revertToRegularNavigation();
+    }
+  }
+  
+  xhr.onerror = revertToRegularNavigation;
+  
+  xhr.open('GET', href);
+  xhr.responseType = 'document';
+  xhr.send();
+}
+
 function setupAjaxNavigation () {
   // riffing off https://github.com/terabaud/eleventy-mini-spa/
   document.querySelectorAll('[data-nav-item]').forEach(function ($a) { 
@@ -43,41 +79,9 @@ function setupAjaxNavigation () {
         event.preventDefault();
         return
       }
-      function revertToRegularNavigation () {
-        location.href = href;
-      }
 
       event.preventDefault();
-      var xhr = new XMLHttpRequest();
-
-      xhr.onload = function () {
-        var response = xhr.responseXML;
-        var title = response.title || '',
-            $main = response.querySelector('[data-site-main]');
-        if ($main) {
-          document.querySelector('[data-site-main]').innerHTML = $main.innerHTML;
-          history.pushState({}, title, href);
-          document.title = title;
-          document.querySelectorAll('[data-nav-item]').forEach(function ($a) {
-            $a.classList.toggle('active', $a.href === href)
-          })
-          window.scrollTo({ behavior: 'smooth', top: 0 });
-          document.body.classList.add('no-transition');
-          setTimeout(function () {
-            document.body.classList.remove('no-transition');
-          }, 100)
-          setStateFromUrlParams();
-          setupLanguageControlsStyle();
-        } else {
-          revertToRegularNavigation();
-        }
-      }
-
-      xhr.onerror = revertToRegularNavigation;
-
-      xhr.open('GET', href);
-      xhr.responseType = 'document';
-      xhr.send();
+      goto(href);
     })
   })
 }
@@ -93,10 +97,14 @@ function setupLanguageControlsStyle () {
   })
 }
 
-window.addEventListener('load', function () {
-  setStateFromUrlParams();
+function onPageLoad () {
   setupAjaxNavigation();
   setupLanguageControlsStyle();
+}
+
+window.addEventListener('load', function () {
+  setStateFromUrlParams();
+  onPageLoad();
 })
 
 // TODO: polyfill URLSearchParams for IE11? (https://github.com/jerrybendy/url-search-params-polyfill)

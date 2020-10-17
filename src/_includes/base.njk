@@ -47,7 +47,7 @@
           {% include "./components/fonts-nav.njk" %}
         {% endblock nav %}
       </aside>
-      <main data-site-main class="{{ layout }}">
+      <main data-site-main>
         {% block main %}
           {{ content | safe }}
         {% endblock main %}
