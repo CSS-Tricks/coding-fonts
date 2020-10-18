@@ -16,6 +16,17 @@ html {
   --bg-light-theme-darker: #ececec;
   --header-height: 108px;
   --header-shadow: 0 2px 24px rgba(0, 0, 0, 0.075);
+
+  &.theme-blue {
+    --bg-main: hsl(199, 15%, 13%);
+    --bg-dark: #263238; // should match the backgound color of the dark themed screenshots
+    --bg-darker: hsl(199, 15%, 12%);
+    --bg-light: hsl(200, 23%, 28%);
+    --body: rgb(120, 155, 171);
+    --body-dark: hsl(199, 23%, 52%);
+    --highlight: #ff4592;
+    --bg-highlight: #db045d; //#7b5893;
+  }
 }
 
 ::selection {
@@ -125,13 +136,14 @@ label {
 
   @include medium {
     flex-direction: row;
+    align-items: stretch;
     min-height: 100vh;
     padding-top: 0;
   }
 }
 
 .sidebar {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-darker, var(--bg-dark));
   --text: var(--body-dark);
 
   @include medium {
@@ -139,6 +151,8 @@ label {
     overflow-y: auto;
     overflow-x: hidden;
     flex: 256px 0 0;
+    position: sticky;
+    top: 0;
   }
 }
 
@@ -146,7 +160,7 @@ label {
   display: flex;
   align-items: center;
   padding: 24px;
-  background-color: var(--bg-dark);
+  background-color: inherit;
   font: {
     size: 19px;
     weight: 700;
@@ -361,6 +375,11 @@ $languages: html, css, js;
       size: 12px;
       weight: 500;
     }
+    --active: var(--highlight);
+    
+    html.theme-blue & {
+      --active: var(--bg-highlight);
+    }
 
     label {
       --inactive-text: white;
@@ -370,7 +389,6 @@ $languages: html, css, js;
       color: white;
       cursor: pointer;
       border-radius: 6px;
-      --active: var(--highlight)
       background-color: var(--active);
       position: relative;
       z-index: 1;
@@ -384,7 +402,7 @@ $languages: html, css, js;
       margin: 3px 0;
       top: 0;
       bottom: 0;
-      background-color: var(--highlight);
+      background-color: var(--active);
       border-radius: 6px;
       z-index: 0;
       transition: all .15s ease-out;
@@ -544,11 +562,19 @@ ul.features {
     width: 18px;
     height: 13px;
     background-image: url("data:image/svg+xml,%3Csvg width='18' height='13' viewBox='0 0 18 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17 1L6 12L1 7' stroke='%23848484' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    
+    html.theme-blue & {
+      background-image: url("data:image/svg+xml,%3Csvg width='18' height='13' viewBox='0 0 18 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17 1L6 12L1 7' stroke='%23789bab' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
   }
 
   &.x {
     width: 14px;
     height: 14px;
     background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 1L1 13' stroke='%23848484' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1 1L13 13' stroke='%23848484' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    
+    html.theme-blue & {
+      background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 1L1 13' stroke='%23789bab' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1 1L13 13' stroke='%23789bab' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
   }
 }
