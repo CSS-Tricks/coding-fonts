@@ -56,4 +56,6 @@ if (font === 'Fira Code') {
 } else if (font === 'Iosevka') {
   injectStylesheet('../../assets/fonts/iosevka/stylesheet.css');
   code.style.fontFamily = 'Iosevka';
+} else if (font === 'Operator Mono') {
+  code.style.fontFamily = 'Operator Mono';
 }
