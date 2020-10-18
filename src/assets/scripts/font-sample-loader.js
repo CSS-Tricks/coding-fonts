@@ -58,4 +58,6 @@ if (font === 'Fira Code') {
   code.style.fontFamily = 'Iosevka';
 } else if (font === 'Operator Mono') {
   code.style.fontFamily = 'Operator Mono';
+} else if (font === 'San Francisco Mono') {
+  code.style.fontFamily = 'SF Mono';
 }
