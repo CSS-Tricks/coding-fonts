@@ -1,0 +1,54 @@
+FONTLOG for the Comie Neue fonts
+
+This file provides detailed information on the Comic Neue Font Software.
+This information should be distributed along with the Comic Neue fonts
+and any derivative works.
+
+Basic Font Information
+
+Comic Neue is a Unicode typeface family that supports the languages
+outlined in the following two ISO standards:
+Latin 2 http://en.wikipedia.org/wiki/ISO/IEC_8859-2
+Latin 9 http://en.wikipedia.org/wiki/ISO/IEC_8859-15
+
+Documentation can be found at www.comicneue.com
+To contribute to the project you can fork the font on Github at
+https://www.github.com/crozynski/comicneue
+
+ChangeLog
+
+14 April 2020 (Viviana Monsalve) Comic Neue version 2.5
+– Various updates made to meet Google Fonts standards.
+
+15 September 2016 (Brandon Schoech) Comic Neue version 2.3
+- Added low quotation marks and Esperanto glyphs.
+
+25 December 2014 (Craig Rozynski) Comic Neue version 2.1
+- Added SIL Open Font License.
+
+22 September 2014 (Hrant Papazian) Comic Neue version 2.0
+– Refinements to glyphs and metrics.
+
+7 April 2014 (Craig Rozynski) Comic Neue version 1.0
+– Publicly launched initial iteration of the font.
+
+Acknowledgements
+
+If you make modifications be sure to add your name (N), email (E), web-address
+(if you have one) (W) and description (D). This list is in alphabetical order.
+
+N: Hrant Papazian
+E: hpapazian@gmail.com
+W: http://themicrofoundry.com
+D: Contributor - Glyph and metric refinement
+
+N: Craig Rozynski
+E: craig@craigrozynski.com
+W: http://www.comicneue.com
+D: Contributor - Original glyphs
+
+N: Brandon Schoech
+E: bms@mm.st
+W: http://www.thisthing.net
+D: Contributor - Additional glyphs
+

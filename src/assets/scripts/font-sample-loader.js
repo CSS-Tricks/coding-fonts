@@ -60,4 +60,8 @@ if (font === 'Fira Code') {
   code.style.fontFamily = 'Operator Mono';
 } else if (font === 'San Francisco Mono') {
   code.style.fontFamily = 'SF Mono';
+} else if (font === 'Comic Neue') {
+  injectStylesheet('../../assets/fonts/ComicNeue/WebFonts/font.css');
+  code.style.fontFamily = 'Comic Neue';
+  code.style.fontWeight = 'bold';
 }
