@@ -9,4 +9,5 @@ license:
 cost: free
 ligatures: true
 italics: true
+stylesheet_url: jetbrains-mono/jetbrains-mono.css
 ---

@@ -2,17 +2,10 @@ const argv = require('minimist')(process.argv.slice(2));
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-// TODO: Could we pull this from the file system?
-const allFonts = [
-  'Anonymous Pro',
-  'Fira Code',
-  'FiraFlott',
-  'Hasklig',
-  'Iosevka',
-  'JetBrains Mono',
-  'Menlo',
-  'Ubuntu Mono'
-];
+// Get a list of .md files from the fonts folder
+const allFonts = fs.readdirSync('./src/fonts')
+    .filter(file => file.endsWith('.md'))
+    .map(file => file.replace('.md', ''))
 
 // Check that the font directory exists
 // and create it, if not.

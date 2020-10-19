@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
     <title>{{ title }}</title>
 
-    <link href="../../assets/styles/sample-style.css" rel="stylesheet" />
-    <link href="../../assets/styles/prism.css" rel="stylesheet" />
+    <link href="../../assets/styles/sample-style.css" rel="stylesheet"/>
+    <link href="../../assets/styles/prism.css" rel="stylesheet"/>
   </head>
   <body>
     {{ content | safe }}
 
     <script src="../../assets/scripts/prism.js"></script>
+    <script>
+      window.allFonts = [
+        {%- for font in collections.fonts -%}
+          {
+            title: '{{ font.data.title }}',
+            stylesheet_url: '{{ font.data.stylesheet_url }}',
+            styleseet_absolute: {{ font.data.stylesheet_absolute | d(false) }}
+          },
+        {%- endfor -%}
+      ];
+    </script>
     <script src="../../assets/scripts/font-sample-loader.js"></script>
   </body>
 </html>

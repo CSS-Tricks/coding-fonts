@@ -8,6 +8,7 @@ license:
   - name: Unknown (Probably the same as Source Code Pro?)
 cost: free
 ligatures: true
+stylesheet_url: Hasklig-1.1/stylesheet.css
 ---
 
 TODO: Make sure to activate the ligatures. Not working right now.

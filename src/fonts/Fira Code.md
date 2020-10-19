@@ -13,6 +13,7 @@ support:
   - name: GitHub Sponsors
     url: https://github.com/sponsors/tonsky
 ligatures: optional
+stylesheet_url: Fira_Code_v5.2/fira_code.css
 ---
 
 Fira Code is a free monospaced font containing ligatures for common programming multi-character combinations. Inspired by Hasklig.

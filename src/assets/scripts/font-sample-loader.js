@@ -25,39 +25,10 @@ injectStylesheet(stylesheet);
 const font = urlParams.get('font');
 const code = document.querySelector('pre > code');
 
-if (font === 'Fira Code') {
-  injectStylesheet('../../assets/fonts/Fira_Code_v5.2/fira_code.css');
-  code.style.fontFamily = 'Fira Code';
-} else if (font === 'Operator Mono') {
-  // Not free/open source, so assumes is locally active
-  code.style.fontFamily = 'Operator Mono';
-} else if (font === 'Ubuntu Mono') {
-  injectStylesheet(
-    'https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@0;1&display=swap'
-  );
-  code.style.fontFamily = 'Ubuntu Mono';
-} else if (font === 'Anonymous Pro') {
-  injectStylesheet(
-    'https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital@0;1&display=swap'
-  );
-  code.style.fontFamily = 'Anonymous Pro';
-} else if (font === 'JetBrains Mono') {
-  injectStylesheet('../../assets/fonts/jetbrains-mono/jetbrains-mono.css');
-  code.style.fontFamily = 'JetBrains Mono';
-} else if (font === 'FiraFlott') {
-  injectStylesheet('../../assets/fonts/FiraFlott/woff/stylesheet.css');
-  code.style.fontFamily = 'firaflott';
-} else if (font === 'Menlo') {
-  injectStylesheet('../../assets/fonts/Menlo/menlo.css');
-  code.style.fontFamily = 'Menlo';
-} else if (font === 'Hasklig') {
-  injectStylesheet('../../assets/fonts/Hasklig-1.1/stylesheet.css');
-  code.style.fontFamily = 'hasklig';
-} else if (font === 'Iosevka') {
-  injectStylesheet('../../assets/fonts/iosevka/stylesheet.css');
-  code.style.fontFamily = 'Iosevka';
-} else if (font === 'Operator Mono') {
-  code.style.fontFamily = 'Operator Mono';
-} else if (font === 'San Francisco Mono') {
-  code.style.fontFamily = 'SF Mono';
+const fontInfo = window.allFonts.find(({ title }) => title === font);
+if (fontInfo) {
+  if (fontInfo.stylesheet_url) {
+    injectStylesheet((fontInfo.styleseet_absolute ? '' : '../../assets/fonts/') + fontInfo.stylesheet_url)
+  } // else not free/open source, so assumes is locally active
+  code.style.fontFamily = fontInfo.title;
 }
