@@ -61,7 +61,8 @@ if (font === 'Fira Code') {
 } else if (font === 'San Francisco Mono') {
   code.style.fontFamily = 'SF Mono';
 } else if (font === 'Comic Neue') {
-  injectStylesheet('../../assets/fonts/ComicNeue/WebFonts/font.css');
+  injectStylesheet(
+  'https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
   code.style.fontFamily = 'Comic Neue';
   code.style.fontWeight = 'bold';
 }
