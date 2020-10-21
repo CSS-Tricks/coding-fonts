@@ -9,6 +9,7 @@ license:
   - url: https://github.com/be5invis/Iosevka/blob/master/LICENSE.md
 cost: free
 ligatures: true
+stylesheet_url: iosevka/stylesheet.css
 ---
 
 Iosevka is an open-source, sans-serif + slab-serif, monospace + quasi‑proportional typeface family, designed for writing code, using in terminals, and preparing technical documents.
