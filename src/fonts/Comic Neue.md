@@ -8,6 +8,7 @@ license:
     url: https://github.com/crozynski/comicneue/blob/master/OFL.txt
 cost: free
 ligatures: false
+stylesheet_url: comic-neue-2.51/font.css
 ---
 
 Comic Neue is an original reinterpretation of the classic, Comic Sans.

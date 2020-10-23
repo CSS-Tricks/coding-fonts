@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Comic Neue';
+    src: local('Comic Neue Light'), local('ComicNeue-Light'),
+        url('ComicNeue-Light.woff2') format('woff2'),
+        url('ComicNeue-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue';
+    src: local('Comic Neue Italic'), local('ComicNeue-Italic'),
+        url('ComicNeue-Italic.woff2') format('woff2'),
+        url('ComicNeue-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue';
+    src: local('Comic Neue Bold'), local('ComicNeue-Bold'),
+        url('ComicNeue-Bold.woff2') format('woff2'),
+        url('ComicNeue-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue';
+    src: local('Comic Neue Bold Italic'), local('ComicNeue-BoldItalic'),
+        url('ComicNeue-BoldItalic.woff2') format('woff2'),
+        url('ComicNeue-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue';
+    src: local('Comic Neue Light Italic'), local('ComicNeue-LightItalic'),
+        url('ComicNeue-LightItalic.woff2') format('woff2'),
+        url('ComicNeue-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue';
+    src: local('Comic Neue Regular'), local('ComicNeue-Regular'),
+        url('ComicNeue-Regular.woff2') format('woff2'),
+        url('ComicNeue-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue Angular';
+    src: local('Comic Neue Angular Bold'), local('ComicNeueAngular-Bold'),
+        url('ComicNeueAngular-Bold.woff2') format('woff2'),
+        url('ComicNeueAngular-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue Angular';
+    src: local('Comic Neue Angular Italic'), local('ComicNeueAngular-Italic'),
+        url('ComicNeueAngular-Italic.woff2') format('woff2'),
+        url('ComicNeueAngular-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue Angular';
+    src: local('Comic Neue Angular Bold Italic'), local('ComicNeueAngular-BoldItalic'),
+        url('ComicNeueAngular-BoldItalic.woff2') format('woff2'),
+        url('ComicNeueAngular-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue Angular';
+    src: local('Comic Neue Angular Light Italic'), local('ComicNeueAngular-LightItalic'),
+        url('ComicNeueAngular-LightItalic.woff2') format('woff2'),
+        url('ComicNeueAngular-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue Angular';
+    src: local('Comic Neue Angular Regular'), local('ComicNeueAngular-Regular'),
+        url('ComicNeueAngular-Regular.woff2') format('woff2'),
+        url('ComicNeueAngular-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue Angular';
+    src: local('Comic Neue Angular Light'), local('ComicNeueAngular-Light'),
+        url('ComicNeueAngular-Light.woff2') format('woff2'),
+        url('ComicNeueAngular-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
