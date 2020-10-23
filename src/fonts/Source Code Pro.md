@@ -10,6 +10,7 @@ cost: free
 italics: true
 ligatures: false
 stylesheet_url: https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap
+stylesheet_absolute: true
 ---
 
 Source Code preserves the design features and vertical proportions of Source Sans, but alters the glyph widths so that they are uniform across all glyphs and weights.
