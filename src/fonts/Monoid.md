@@ -1,7 +1,8 @@
 ---
 title: Monoid
 designers:
-  - name: Andreas Larsen and Chase Colman
+  - name: Andreas Larsen
+  - name: Chase Colman
 home_url: https://larsenwork.com/monoids
 license:
   - name: MIT and OFL
