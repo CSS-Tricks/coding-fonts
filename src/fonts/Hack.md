@@ -11,6 +11,7 @@ license:
 cost: free
 italics: true
 stylesheet_url: Hack-v3.003/stylesheet.css
+ligatures: false
 ---
 
 A typeface designed for source code. Widely supported UFO format source code. Hack away with any modern font editing tool & customize it to your needs.
