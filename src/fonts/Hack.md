@@ -1,7 +1,8 @@
 ---
 title: Hack
 designers:
-  - name: Chris Simpkins and David van Gemeren
+  - name: Chris Simpkins
+  - name: David van Gemeren
 home_url: https://sourcefoundry.org/hack/
 repo_url: https://github.com/source-foundry/Hack
 license:
