@@ -1,0 +1,13 @@
+@font-face {
+  src: url('./Webfonts/Sudo-Regular.woff2');
+  font-family: 'Sudo';
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  src: url('./Webfonts/Sudo-Italic.woff2');
+  font-family: 'Sudo';
+  font-style: italic;
+  font-weight: 400;
+}
