@@ -1,5 +1,5 @@
 @font-face {
-  src: url('./JuliaMono.ttf');
+  src: url('JuliaMono.woff') format('woff');
   font-family: 'JuliaMono';
   font-style: normal;
 }
