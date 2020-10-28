@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Victor Mono';
+  src: url('WOFF2/VictorMono-Regular.woff2') format('woff2'),
+    url('WOFF/VictorMono-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Victor Mono';
+  src: url('WOFF2/VictorMono-Italic.woff2') format('woff2'),
+    url('WOFF/VictorMono-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Victor Mono';
+  src: url('WOFF2/VictorMono-Bold.woff2') format('woff2'),
+    url('WOFF/VictorMono-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Victor Mono';
+  src: url('WOFF2/VictorMono-BoldItalic.woff2') format('woff2'),
+    url('WOFF/VictorMono-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
