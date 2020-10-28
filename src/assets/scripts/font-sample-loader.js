@@ -25,10 +25,15 @@ injectStylesheet(stylesheet);
 const font = urlParams.get('font');
 const code = document.querySelector('pre > code');
 
-const fontInfo = window.allFonts.find(({ title }) => title === font);
+const fontInfo = window.allFonts.find(({ slug }) => slug === font);
 if (fontInfo) {
   if (fontInfo.stylesheet_url) {
-    injectStylesheet((fontInfo.styleseet_absolute ? '' : '../../assets/fonts/') + fontInfo.stylesheet_url)
+    const stylesheetToInject =
+      (fontInfo.stylesheet_absolute ? '' : '../../assets/fonts/') +
+      fontInfo.stylesheet_url;
+    console.log(stylesheetToInject);
+    injectStylesheet(stylesheetToInject);
   } // else not free/open source, so assumes is locally active
   code.style.fontFamily = fontInfo.title;
+  console.log(fontInfo.title);
 }

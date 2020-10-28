@@ -55,10 +55,17 @@ layout: base
     {%- for theme in samples.themes -%}
       {%- for language in samples.languages -%}
         <div class="screenshot" data-theme="{{theme}}" data-language="{{language.value}}">
-          <picture>
-            {# TODO: add responsive sources #}
-            <img src="/screenshots/{{title}}/{{language.value}}-{{theme}}.png">
-          </picture>
+          <img 
+            srcset="
+              {{images.urlPrefixLarge}}{{images.imageLocation}}/screenshots/{{title | slug}}/{{language.value}}-{{theme}}.png 1600w,
+              {{images.urlPrefixMedium}}{{images.imageLocation}}/screenshots/{{title | slug}}/{{language.value}}-{{theme}}.png 1200w,
+              {{images.urlPrefixSmall}}{{images.imageLocation}}/screenshots/{{title | slug}}/{{language.value}}-{{theme}}.png 600w"
+            sizes="
+              (max-width: 1350px) 50vw,
+              (max-width: 900px) 80vw,
+              96vw,
+            "
+          >
         </div>
       {%- endfor -%}
     {%- endfor -%}

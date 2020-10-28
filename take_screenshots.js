@@ -3,9 +3,10 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 
 // Get a list of .md files from the fonts folder
-const allFonts = fs.readdirSync('./src/fonts')
-    .filter(file => file.endsWith('.md'))
-    .map(file => file.replace('.md', ''))
+const allFonts = fs
+  .readdirSync('./src/fonts')
+  .filter((file) => file.endsWith('.md'))
+  .map((file) => file.replace('.md', ''));
 
 // Check that the font directory exists
 // and create it, if not.

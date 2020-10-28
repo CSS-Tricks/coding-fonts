@@ -17,8 +17,9 @@
         {%- for font in collections.fonts -%}
           {
             title: '{{ font.data.title }}',
+            slug: '{{ font.data.title | slug }}',
             stylesheet_url: '{{ font.data.stylesheet_url }}',
-            styleseet_absolute: {{ font.data.stylesheet_absolute | d(false) }}
+            stylesheet_absolute: {{ font.data.stylesheet_absolute | d(false) }}
           },
         {%- endfor -%}
       ];
