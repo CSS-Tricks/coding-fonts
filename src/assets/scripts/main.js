@@ -75,13 +75,13 @@ function setupAjaxNavigation () {
   // riffing off https://github.com/terabaud/eleventy-mini-spa/
   document.querySelectorAll('[data-nav-item]').forEach(function ($a) { 
     $a.addEventListener('click', function(event) {
+      event.preventDefault();
       var href = $a.href;
+      
       if (href === location.href) {
-        event.preventDefault();
         return
       }
 
-      event.preventDefault();
       goto(href);
     })
   })
