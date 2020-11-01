@@ -54,11 +54,14 @@ function goto (href) {
       })
       window.scrollTo({ behavior: 'smooth', top: 0 });
       document.body.classList.add('no-transition');
+
       setTimeout(function () {
-        document.body.classList.remove('no-transition');
-        setStateFromUrlParams();
         setupLanguageControlsStyle();
-      }, 100)
+        document.body.classList.remove('no-transition');
+      }, 100);
+
+      setStateFromUrlParams();
+
     } else {
       revertToRegularNavigation();
     }
