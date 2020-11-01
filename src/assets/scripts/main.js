@@ -56,9 +56,9 @@ function goto (href) {
       document.body.classList.add('no-transition');
       setTimeout(function () {
         document.body.classList.remove('no-transition');
+        setStateFromUrlParams();
+        setupLanguageControlsStyle();
       }, 100)
-      setStateFromUrlParams();
-      setupLanguageControlsStyle();
     } else {
       revertToRegularNavigation();
     }
