@@ -3,7 +3,7 @@ title: IBM Plex Mono
 designers:
   - name: Mike Abbink
   - name: Bold Monday
-home_url: https://www.marksimonson.com/fonts/view/anonymous-pro
+home_url: https://www.ibm.com/plex/
 license:
   - name: Open Font License
     url: https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
