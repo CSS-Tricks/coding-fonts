@@ -15,6 +15,10 @@
     {
       "value": "js",
       "label": "Javascript"
+    },
+    {
+      "value": "charmap",
+      "label": "Character Map"
     }
   ]
 }

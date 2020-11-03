@@ -23,9 +23,10 @@ injectStylesheet(stylesheet);
 
 // Set the font
 const font = urlParams.get('font');
-const code = document.querySelector('pre > code');
+const codes = document.querySelectorAll('pre code');
 
 const fontInfo = window.allFonts.find(({ slug }) => slug === font);
+console.log(fontInfo)
 if (fontInfo) {
   if (fontInfo.stylesheet_url) {
     const stylesheetToInject =
@@ -33,7 +34,10 @@ if (fontInfo) {
       fontInfo.stylesheet_url;
     console.log(stylesheetToInject);
     injectStylesheet(stylesheetToInject);
+    if (!fontInfo.ligatures || fontInfo.ligatures === 'false') {
+      document.getElementById('ligatures').style.display = 'none'
+    }
   } // else not free/open source, so assumes is locally active
-  code.style.fontFamily = fontInfo.title;
+  codes.forEach(code => { code.style.fontFamily = fontInfo.title; })
   console.log(fontInfo.title);
 }

@@ -14,6 +14,7 @@
     "screenshots:js": "node take_screenshots.js --lang js --theme light --font \"$FONT\" && node take_screenshots.js --lang js --theme dark --font \"$FONT\"",
     "screenshots:html": "node take_screenshots.js --lang html --theme light --font \"$FONT\" && node take_screenshots.js --lang html --theme dark --font \"$FONT\"",
     "screenshots:css": "node take_screenshots.js --lang css --theme light --font \"$FONT\" && node take_screenshots.js --lang css --theme dark --font \"$FONT\"",
+    "screenshots:charmap": "node take_screenshots.js --lang charmap --theme light --font \"$FONT\" && node take_screenshots.js --lang charmap --theme dark --font \"$FONT\"",
     "screenshots:all": "node take_screenshots.js --all true"
   },
   "repository": {
