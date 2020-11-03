@@ -10,6 +10,7 @@ license:
 cost: free
 ligatures: false
 italics: true
+variable: false
 stylesheet_url: fantasque-sans-mono/fantasque-sans-mono.css
 ---
 

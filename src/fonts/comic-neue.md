@@ -8,6 +8,8 @@ license:
     url: https://github.com/crozynski/comicneue/blob/master/OFL.txt
 cost: free
 ligatures: false
+italic: true
+variable: false
 stylesheet_url: comic-neue-2.51/font.css
 ---
 

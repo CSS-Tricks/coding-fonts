@@ -13,6 +13,8 @@ support:
   - name: GitHub Sponsors
     url: https://github.com/sponsors/tonsky
 ligatures: optional
+variable: false
+italics: false
 stylesheet_url: Fira_Code_v5.2/fira_code.css
 ---
 
