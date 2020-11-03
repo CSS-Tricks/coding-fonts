@@ -267,6 +267,7 @@ a.fonts-nav-link.active:after {
 @media screen and (min-width: 1366px) {
   .screenshot-stage {
     margin: 12px;
+    max-width: 100vh;
   }
 }
 @media screen and (max-width: 400px) {
