@@ -1,6 +1,7 @@
 const argv = require('minimist')(process.argv.slice(2));
 const puppeteer = require('puppeteer');
 const fs = require('fs');
+const samples = require('./src/_data/samples.json')
 
 // Get a list of .md files from the fonts folder
 const allFonts = fs
@@ -50,17 +51,23 @@ async function takeScreenshot(lang, font, theme) {
 if (argv.all) {
   allFonts.forEach((font) => {
     async function takeScreenshotsSlowly() {
-      await takeScreenshot('html', font, 'light');
-      await takeScreenshot('html', font, 'dark');
-
-      await takeScreenshot('css', font, 'light');
-      await takeScreenshot('css', font, 'dark');
-
-      await takeScreenshot('js', font, 'light');
-      await takeScreenshot('js', font, 'dark');
+      samples.languages.forEach(async (language) => {
+        samples.themes.forEach(async theme => {
+          await takeScreenshot(language.value, font, theme);
+        })
+      })
     }
     takeScreenshotsSlowly();
   });
+} else if (argv['all-for-lang']) {
+  allFonts.forEach(async (font) => {
+    async function takeScreenshotsSlowly() {
+      samples.themes.forEach(async theme => {
+        await takeScreenshot(argv['all-for-lang'], font, theme);
+      })
+    }
+    await takeScreenshotsSlowly();
+  })
 } else {
   takeScreenshot(argv.lang, argv.font, argv.theme);
 }

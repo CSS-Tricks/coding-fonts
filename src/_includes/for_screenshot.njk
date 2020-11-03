@@ -19,7 +19,8 @@
             title: '{{ font.data.title }}',
             slug: '{{ font.data.title | slug }}',
             stylesheet_url: '{{ font.data.stylesheet_url }}',
-            stylesheet_absolute: {{ font.data.stylesheet_absolute | d(false) }}
+            stylesheet_absolute: {{ font.data.stylesheet_absolute | d(false) }},
+            ligatures: '{{ font.data.ligatures }}'
           },
         {%- endfor -%}
       ];
