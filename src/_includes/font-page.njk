@@ -56,6 +56,7 @@ layout: base
       {%- for language in samples.languages -%}
         <div class="screenshot" data-theme="{{theme}}" data-language="{{language.value}}">
           <img 
+            onerror="this.style.display='none'"
             srcset="
               {{images.urlPrefixLarge}}{{images.imageLocation}}/screenshots/{{title | slug}}/{{language.value}}-{{theme}}.png 1600w,
               {{images.urlPrefixMedium}}{{images.imageLocation}}/screenshots/{{title | slug}}/{{language.value}}-{{theme}}.png 1200w,
