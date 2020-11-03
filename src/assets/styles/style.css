@@ -267,7 +267,6 @@ a.fonts-nav-link.active:after {
 @media screen and (min-width: 1366px) {
   .screenshot-stage {
     margin: 12px;
-    max-width: 100vh;
   }
 }
 @media screen and (max-width: 400px) {
@@ -387,6 +386,10 @@ html.theme-blue .screenshot-controls .controls {
   left: var(--left-js);
   width: var(--width-js);
 }
+[value=charmap]:checked ~ .screenshot-stage .screenshot-controls .controls.with-widths:after {
+  left: var(--left-charmap);
+  width: var(--width-charmap);
+}
 .screenshot-controls .controls.with-widths label {
   --active: transparent;
 }
@@ -465,6 +468,15 @@ html.theme-blue .screenshot-controls .controls {
   color: var(--inactive-text, white);
 }
 [value=js]:not(:checked) ~ .screenshot-stage .screenshot-wrapper [data-language=js] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+[value=charmap]:not(:checked) ~ .screenshot-stage .screenshot-controls [data-language=charmap] {
+  background-color: transparent;
+  color: var(--inactive-text, white);
+}
+[value=charmap]:not(:checked) ~ .screenshot-stage .screenshot-wrapper [data-language=charmap] {
   opacity: 0;
   pointer-events: none;
 }
