@@ -1,6 +1,11 @@
 @font-face {
-  font-family: "Menlo";
-  src: url("Menlo-Regular.woff") format("woff");
+  font-family: 'Menlo';
+  src: url('Menlo-Regular.woff') format('woff');
   font-weight: 400;
+  font-style: normal;
+}
+
+/* No italics */
+.token.comment {
   font-style: normal;
 }

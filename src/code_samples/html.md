@@ -22,7 +22,7 @@ title: HTML Sample
         &lt;h1&gt;Hello from World Corp&lt;/h1&gt;
         &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry...&lt;/p&gt;
       &lt;/article&gt;
-    &lt;/main&gt;
-    &lt;script async src=&quot;main.js&quot;&gt; &lt;/script&gt;
+    &lt;/main&gt; &lt;!-- END of main content --&gt;
+    &lt;script async src=&quot;main.js&quot;&gt;&lt;/script&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>

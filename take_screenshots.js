@@ -1,7 +1,7 @@
 const argv = require('minimist')(process.argv.slice(2));
 const puppeteer = require('puppeteer');
 const fs = require('fs');
-const samples = require('./src/_data/samples.json')
+const samples = require('./src/_data/samples.json');
 
 // Get a list of .md files from the fonts folder
 const allFonts = fs
@@ -17,7 +17,11 @@ if (!fs.existsSync(dir)) {
   fs.mkdirSync(dir);
 }
 
+const timeout = (ms) => new Promise((res) => setTimeout(res, ms));
+
 async function takeScreenshot(lang, font, theme) {
+  await timeout(5000);
+
   const browser = await puppeteer.launch({
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
@@ -45,29 +49,34 @@ async function takeScreenshot(lang, font, theme) {
 
   await browser.close();
 
-  return Promise.resolve(1);
+  Promise.resolve(1);
 }
 
 if (argv.all) {
   allFonts.forEach((font) => {
     async function takeScreenshotsSlowly() {
       samples.languages.forEach(async (language) => {
-        samples.themes.forEach(async theme => {
+        samples.themes.forEach(async (theme) => {
+          console.log('TAKING SCREENSHOT OF: ', language.value, font, theme);
           await takeScreenshot(language.value, font, theme);
-        })
-      })
+          await timeout(5000);
+        });
+        await timeout(5000);
+      });
     }
     takeScreenshotsSlowly();
   });
 } else if (argv['all-for-lang']) {
   allFonts.forEach(async (font) => {
     async function takeScreenshotsSlowly() {
-      samples.themes.forEach(async theme => {
+      samples.themes.forEach(async (theme) => {
+        console.log('TAKING SCREENSHOT OF: ', language.value, font, theme);
         await takeScreenshot(argv['all-for-lang'], font, theme);
-      })
+      });
     }
     await takeScreenshotsSlowly();
-  })
+  });
 } else {
+  console.log('TAKING SCREENSHOT OF: ', argv.lang, argv.font, argv.theme);
   takeScreenshot(argv.lang, argv.font, argv.theme);
 }

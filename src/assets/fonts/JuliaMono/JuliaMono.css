@@ -3,3 +3,9 @@
   font-family: 'JuliaMono';
   font-style: normal;
 }
+
+pre,
+code {
+  font-feature-settings: 'zero', 'ss01';
+  font-variant-ligatures: contextual;
+}

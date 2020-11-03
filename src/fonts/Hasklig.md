@@ -8,10 +8,10 @@ license:
   - name: Unknown (Probably the same as Source Code Pro?)
 cost: free
 ligatures: true
+italic: true
+variable: false
 stylesheet_url: Hasklig-1.1/stylesheet.css
 ---
-
-TODO: Make sure to activate the ligatures. Not working right now.
 
 Based on Source Code Pro, but adds ligatures.
 

@@ -24,20 +24,23 @@ injectStylesheet(stylesheet);
 // Set the font
 const font = urlParams.get('font');
 const codes = document.querySelectorAll('pre code');
+const pre = document.querySelector('pre');
 
 const fontInfo = window.allFonts.find(({ slug }) => slug === font);
-console.log(fontInfo)
 if (fontInfo) {
   if (fontInfo.stylesheet_url) {
     const stylesheetToInject =
       (fontInfo.stylesheet_absolute ? '' : '../../assets/fonts/') +
       fontInfo.stylesheet_url;
-    console.log(stylesheetToInject);
     injectStylesheet(stylesheetToInject);
     if (!fontInfo.ligatures || fontInfo.ligatures === 'false') {
-      document.getElementById('ligatures').style.display = 'none'
+      const ligaturesEl = document.getElementById('ligatures');
+      if (ligaturesEl) ligaturesEl.style.display = 'none';
     }
   } // else not free/open source, so assumes is locally active
-  codes.forEach(code => { code.style.fontFamily = fontInfo.title; })
-  console.log(fontInfo.title);
+  codes.forEach((code) => {
+    code.style.fontFamily = fontInfo.title;
+  });
+  document.body.style.fontFamily = fontInfo.title;
+  pre.style.fontFamily = fontInfo.title;
 }

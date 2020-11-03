@@ -9,6 +9,8 @@ license:
   - url: https://github.com/be5invis/Iosevka/blob/master/LICENSE.md
 cost: free
 ligatures: true
+italics: true
+variable: false
 stylesheet_url: iosevka/stylesheet.css
 ---
 

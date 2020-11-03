@@ -1,8 +1,5 @@
 {
-  "themes": [
-    "dark",
-    "light"
-  ],
+  "themes": ["dark", "light"],
   "languages": [
     {
       "value": "html",

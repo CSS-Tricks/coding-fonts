@@ -12,7 +12,7 @@ support:
     url: https://www.patreon.com/tonsky
   - name: GitHub Sponsors
     url: https://github.com/sponsors/tonsky
-ligatures: optional
+ligatures: true
 variable: false
 italics: false
 stylesheet_url: Fira_Code_v5.2/fira_code.css
