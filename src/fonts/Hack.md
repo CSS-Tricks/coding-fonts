@@ -10,8 +10,9 @@ license:
   - url: https://github.com/source-foundry/Hack/blob/master/LICENSE.md
 cost: free
 italics: true
-stylesheet_url: Hack-v3.003/stylesheet.css
 ligatures: false
+variable: false
+stylesheet_url: Hack-v3.003/stylesheet.css
 ---
 
 A typeface designed for source code. Widely supported UFO format source code. Hack away with any modern font editing tool & customize it to your needs.

@@ -9,6 +9,7 @@ license:
 cost: free
 italics: false
 ligatures: true
+variable: false
 stylesheet_url: Cascadia Code/cascadia-code.css
 ---
 

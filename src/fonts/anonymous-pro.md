@@ -8,6 +8,8 @@ license:
     url: https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 cost: free
 ligatures: false
+italics: true
+variable: false
 stylesheet_url: https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital@0;1&display=swap
 stylesheet_absolute: true
 ---

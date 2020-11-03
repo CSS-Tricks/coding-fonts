@@ -8,6 +8,8 @@ license:
     url: https://www.typography.com/policies/eula
 cost: $199
 ligatures: false
+italics: true
+variable: false
 ---
 
 A typeface rooted in the traditions of typewriting, Operator is designed to offer a new voice for designers, and a new tool for developers.
