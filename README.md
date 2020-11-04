@@ -19,3 +19,23 @@ https://coding-fonts.css-tricks.com/
 - Run the screenshots! This is a local-only process. At the command line: `FONT='consolas' npm run screenshots`. You can change `FONT` to a font name matching the name of the Markdown file that you created.
 
 Then make a Pull Request for it. You should be able to see a built preview on Netlify as part of the PR.
+
+## Commands
+
+Take all screenshots for one font:
+
+```
+FONT='font-name' npm run screenshots
+```
+
+Take all screenshots:
+
+```
+npm run screenshots:all
+```
+
+Take all screenshots for one language:
+
+```
+node take_screenshots.js --all-for-lang="html"
+```

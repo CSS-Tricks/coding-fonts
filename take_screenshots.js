@@ -17,11 +17,13 @@ if (!fs.existsSync(dir)) {
   fs.mkdirSync(dir);
 }
 
-const timeout = (ms) => new Promise((res) => setTimeout(res, ms));
+async function asyncForEach(array, callback) {
+  for (let index = 0; index < array.length; index++) {
+    await callback(array[index], index, array);
+  }
+}
 
 async function takeScreenshot(lang, font, theme) {
-  await timeout(5000);
-
   const browser = await puppeteer.launch({
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
@@ -48,34 +50,30 @@ async function takeScreenshot(lang, font, theme) {
   });
 
   await browser.close();
-
-  Promise.resolve(1);
 }
 
 if (argv.all) {
-  allFonts.forEach((font) => {
-    async function takeScreenshotsSlowly() {
-      samples.languages.forEach(async (language) => {
-        samples.themes.forEach(async (theme) => {
+  async function takeScreenshotsSlowly() {
+    await asyncForEach(allFonts, async (font) => {
+      await asyncForEach(samples.languages, async (language) => {
+        await asyncForEach(samples.themes, async (theme) => {
           console.log('TAKING SCREENSHOT OF: ', language.value, font, theme);
           await takeScreenshot(language.value, font, theme);
-          await timeout(5000);
         });
-        await timeout(5000);
       });
-    }
-    takeScreenshotsSlowly();
-  });
+    });
+  }
+  takeScreenshotsSlowly();
 } else if (argv['all-for-lang']) {
-  allFonts.forEach(async (font) => {
-    async function takeScreenshotsSlowly() {
-      samples.themes.forEach(async (theme) => {
+  async function takeScreenshotsSlowly() {
+    await asyncForEach(allFonts, async (font) => {
+      await asyncForEach(samples.themes, async (theme) => {
         console.log('TAKING SCREENSHOT OF: ', language.value, font, theme);
         await takeScreenshot(argv['all-for-lang'], font, theme);
       });
-    }
-    await takeScreenshotsSlowly();
-  });
+    });
+    takeScreenshotsSlowly();
+  }
 } else {
   console.log('TAKING SCREENSHOT OF: ', argv.lang, argv.font, argv.theme);
   takeScreenshot(argv.lang, argv.font, argv.theme);
