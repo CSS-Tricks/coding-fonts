@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'Input';
+  src: url('input.woff2') format('woff2'), url('input.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
