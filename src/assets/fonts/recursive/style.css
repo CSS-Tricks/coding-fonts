@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'recursive';
+  src: url('recursive.woff2') format('woff2-variations');
+  font-weight: 300 1000;
+  font-style: normal;
+}
+
+pre,
+code {
+  font-variation-settings: 'MONO' 1, 'wght' 400, 'dlig' 1;
+  font-feature-settings: 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06',
+    'ss07', 'ss08', 'ss09', 'ss10', 'ss11';
+}
+
+.token.comment {
+  font-variation-settings: 'MONO' 1, 'slnt' -10, 'wght' 400;
+}
