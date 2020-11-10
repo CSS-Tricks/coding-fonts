@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'MonoLisa';
+  src: url('MonoLisa-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MonoLisa';
+  src: url('MonoLisa-RegularItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}

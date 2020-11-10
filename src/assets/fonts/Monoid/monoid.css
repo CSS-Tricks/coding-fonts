@@ -1,27 +1,14 @@
 @font-face {
   font-family: 'Monoid';
   src: url('woff2/Monoid-Regular.woff2') format('woff2'),
-    url('woff/Monoid-Regular.woff') format('woff'),
-    url('ttf/Monoid-Regular.ttf') format('truetype'),
-    url('eot/Monoid-Regular.eot') format('embedded-opentype');
+    url('woff/Monoid-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Monoid';
-  src: url('woff2/Monoid-Bold.woff2') format('woff2'),
-    url('woff/Monoid-Bold.woff') format('woff'),
-    url('ttf/Monoid-Bold.ttf') format('truetype'),
-    url('eot/Monoid-Bold.eot') format('embedded-opentype');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Monoid';
   src: url('woff2/Monoid-Italic.woff2') format('woff2'),
-    url('woff/Monoid-Italic.woff') format('woff'),
-    url('ttf/Monoid-Italic.ttf') format('truetype'),
-    url('eot/Monoid-Italic.eot') format('embedded-opentype');
+    url('woff/Monoid-Italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
