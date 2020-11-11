@@ -3,3 +3,8 @@
   font-family: 'Cascadia Code';
   font-style: normal;
 }
+
+/* No italics */
+.token.comment {
+  font-style: normal;
+}

@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Gintronic';
+  src: url('Gintronic-Regular.woff2') format('woff2'),
+    url('Gintronic-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: '  font-family: ' Gintronic ';
+  ';
+  src: url('Gintronic-Italic.woff2') format('woff2'),
+    url('Gintronic-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
