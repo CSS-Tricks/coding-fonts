@@ -101,10 +101,27 @@ function setupLanguageControlsStyle () {
   })
 }
 
+function setupStickyObserver () {
+  if (!'IntersectionObserver' in window) return
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries[0].target.classList.toggle('stuck', entries[0].intersectionRatio < 1)
+    }, {
+      threshold: 1
+    }
+  )
+
+  document.querySelectorAll('[data-sticky]').forEach(function ($el) {
+    $el.style.top = '-1px'; // setting this here to avoid sticky weirdness if IntersectionObserver isn't supported
+    observer.observe($el);
+  })
+}
+
 window.addEventListener('load', function () {
   setupAjaxNavigation();
   setStateFromUrlParams();
   setupLanguageControlsStyle();
+  setupStickyObserver();
 })
 
 // TODO: polyfill URLSearchParams for IE11? (https://github.com/jerrybendy/url-search-params-polyfill)
