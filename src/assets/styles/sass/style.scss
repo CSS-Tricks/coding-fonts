@@ -5,33 +5,23 @@
 }
 
 html {
-  --bg-main: #333333;
-  --bg-dark: #2D2D2D; // should match the backgound color of the dark themed screenshots
-  --bg-light: #424242;
   --bg-light-theme: #FAFAFA; // should match the backgound color of the light themed screenshots
-  --highlight: #FF006A;
-  --bg-highlight: #2E141E;
-  --body: #9B9B9B;
-  --body-dark: #848484;
+  --bg-dark: #263238; // should match the backgound color of the dark themed screenshots
   --bg-light-theme-darker: #ececec;
+  --bg-main: hsl(199, 15%, 13%);
+  --bg-darker: hsl(199, 15%, 12%);
+  --bg-light: hsl(200, 23%, 28%);
+  --body: rgb(120, 155, 171);
+  --body-dark: hsl(199, 23%, 52%);
+  --highlight: #ff4592;
+  --bg-highlight: #db045d;
+  --header-shadow: 0 2px 24px rgba(0,0,0,.225);
   --header-height: 108px;
-  --header-shadow: 0 2px 24px rgba(0, 0, 0, 0.075);
-
-  &.theme-blue {
-    --bg-main: hsl(199, 15%, 13%);
-    --bg-dark: #263238; // should match the backgound color of the dark themed screenshots
-    --bg-darker: hsl(199, 15%, 12%);
-    --bg-light: hsl(200, 23%, 28%);
-    --body: rgb(120, 155, 171);
-    --body-dark: hsl(199, 23%, 52%);
-    --highlight: #ff4592;
-    --bg-highlight: #db045d; //#7b5893;
-  }
 }
 
 ::selection {
   background-color: var(--highlight);
-  color: var(--bg-highlight);
+  color: white;
 }
 
 body {
@@ -172,11 +162,19 @@ label {
   top: 0;
   z-index: 9;
   box-shadow: var(--header-shadow);
+  transition: box-shadow .3s ease-out;
   
   @include medium {
     position: sticky;
     width: 100%;
-    box-shadow: none;
+
+    &:not(.stuck) {
+      box-shadow: none;
+    }
+
+    &.stuck {
+      padding-top: 26px;
+    }
   }
 
   svg {
@@ -192,6 +190,18 @@ label {
 
   @include medium {
     padding: 0;
+  }
+}
+
+.contribute {
+  margin: 18px 24px 12px;
+  padding: 24px 0 12px;
+  border-top: solid 1px var(--bg-light);
+  font-size: .8em;
+
+  a {
+    display: block;
+    margin-top: .33em;
   }
 }
 
