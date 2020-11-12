@@ -4,7 +4,7 @@
 }
 
 html {
-  --bg-light-theme: #FAFAFA;
+  --bg-light-theme: #fafafa;
   --bg-dark: #263238;
   --bg-light-theme-darker: #ececec;
   --bg-main: hsl(199, 15%, 13%);
@@ -14,7 +14,7 @@ html {
   --body-dark: hsl(199, 23%, 52%);
   --highlight: #ff4592;
   --bg-highlight: #db045d;
-  --header-shadow: 0 2px 24px rgba(0,0,0,.225);
+  --header-shadow: 0 2px 24px rgba(0, 0, 0, 0.225);
   --header-height: 108px;
 }
 
@@ -46,7 +46,13 @@ ul {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6, blockquote {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote {
   line-height: 1;
   margin: 0;
   font: inherit;
@@ -127,6 +133,14 @@ label {
     flex: 256px 0 0;
     position: sticky;
     top: 0;
+  }
+  .sidebar::-webkit-scrollbar {
+    width: 10px;
+    background: var(--bg-main);
+  }
+  .sidebar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--bg-light);
   }
 }
 
@@ -238,7 +252,7 @@ a.fonts-nav-link.active:after {
 }
 
 .fonts-nav-item {
-  animation: enter-fonts-nav-item 0.6s ease-in-out calc((var(--i) - (1 / (var(--i) * var(--i)))) * .05s + .3s) 1 backwards;
+  animation: enter-fonts-nav-item 0.6s ease-in-out calc((var(--i) - (1 / (var(--i) * var(--i)))) * 0.05s + 0.3s) 1 backwards;
 }
 @keyframes enter-fonts-nav-item {
   from {
@@ -261,7 +275,7 @@ a.fonts-nav-link.active:after {
 }
 
 .screenshot-stage {
-  --transition-duration: .2333s;
+  --transition-duration: 0.2333s;
   --transition-timing: ease-out;
   --transition: all var(--transition-duration) var(--transition-timing);
   position: relative;
@@ -301,7 +315,7 @@ a.fonts-nav-link.active:after {
   background-color: var(--bg-light-theme-darker);
 }
 [value=light]:checked ~ .screenshot-stage .controls label {
-  --inactive-text: var(--bg-dark) ;
+  --inactive-text: var(--bg-dark);
 }
 @media screen and (min-width: 1366px) {
   .screenshot-stage {
@@ -519,7 +533,7 @@ html.theme-blue .screenshot-controls .controls {
 }
 @media screen and (min-width: 900px) {
   .details .enter {
-    animation: enter-details 0.3s ease-in-out calc(var(--i) * .05s) 1 backwards;
+    animation: enter-details 0.3s ease-in-out calc(var(--i) * 0.05s) 1 backwards;
   }
   @keyframes enter-details {
     from {
