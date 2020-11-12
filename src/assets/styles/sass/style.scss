@@ -1,45 +1,34 @@
-@import 'mixins';
+@import "mixins";
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  --bg-main: #333333;
-  --bg-dark: #2d2d2d; // should match the backgound color of the dark themed screenshots
-  --bg-light: #424242;
-  --bg-light-theme: #fafafa; // should match the backgound color of the light themed screenshots
-  --highlight: #ff006a;
-  --bg-highlight: #2e141e;
-  --body: #9b9b9b;
-  --body-dark: #848484;
+  --bg-light-theme: #FAFAFA; // should match the backgound color of the light themed screenshots
+  --bg-dark: #263238; // should match the backgound color of the dark themed screenshots
   --bg-light-theme-darker: #ececec;
+  --bg-main: hsl(199, 15%, 13%);
+  --bg-darker: hsl(199, 15%, 12%);
+  --bg-light: hsl(200, 23%, 28%);
+  --body: rgb(120, 155, 171);
+  --body-dark: hsl(199, 23%, 52%);
+  --highlight: #ff4592;
+  --bg-highlight: #db045d;
+  --header-shadow: 0 2px 24px rgba(0,0,0,.225);
   --header-height: 108px;
-  --header-shadow: 0 2px 24px rgba(0, 0, 0, 0.075);
-
-  &.theme-blue {
-    --bg-main: hsl(199, 15%, 13%);
-    --bg-dark: #263238; // should match the backgound color of the dark themed screenshots
-    --bg-darker: hsl(199, 15%, 12%);
-    --bg-light: hsl(200, 23%, 28%);
-    --body: rgb(120, 155, 171);
-    --body-dark: hsl(199, 23%, 52%);
-    --highlight: #ff4592;
-    --bg-highlight: #db045d; //#7b5893;
-  }
 }
 
 ::selection {
   background-color: var(--highlight);
-  color: var(--bg-highlight);
+  color: white;
 }
 
 body {
   --bg: var(--bg-main);
   --text: var(--body);
   font: {
-    family: 'Ringside Regular SSm A', 'Ringside Regular SSm B', system-ui,
-      sans-serif;
+    family: "Ringside Regular SSm A", "Ringside Regular SSm B", system-ui, sans-serif;
     size: 15px;
   }
   margin: 0;
@@ -60,13 +49,7 @@ ul {
   padding: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-blockquote {
+h1,h2,h3,h4,h5,h6, blockquote {
   line-height: 1;
   margin: 0;
   font: inherit;
@@ -84,17 +67,16 @@ blockquote {
     position: absolute;
     width: 2em;
     height: 2em;
-    top: -0.2em;
-    left: -0.075em;
+    top: -.2em;
+    left: -.075em;
     font-size: 8em;
-    opacity: 0.1;
+    opacity: .1;
     pointer-events: none;
   }
 }
 
 a {
-  &,
-  &:visited {
+  &, &:visited {
     color: var(--highlight);
   }
 }
@@ -114,7 +96,7 @@ label {
 
   &:not(:last-child) {
     &:after {
-      content: ', ';
+      content: ', '
     }
   }
 
@@ -123,10 +105,10 @@ label {
       content: ' ';
     }
   }
-
+  
   &:last-child:not(:first-of-type) {
     &:before {
-      content: 'and ';
+      content: 'and '
     }
   }
 
@@ -161,16 +143,6 @@ label {
     flex: 256px 0 0;
     position: sticky;
     top: 0;
-
-    &::-webkit-scrollbar {
-      width: 10px;
-      background: var(--bg-main);
-    }
-
-    &::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      background-color: var(--bg-light);
-    }
   }
 }
 
@@ -190,18 +162,26 @@ label {
   top: 0;
   z-index: 9;
   box-shadow: var(--header-shadow);
-
+  transition: box-shadow .3s ease-out;
+  
   @include medium {
     position: sticky;
     width: 100%;
-    box-shadow: none;
+
+    &:not(.stuck) {
+      box-shadow: none;
+    }
+
+    &.stuck {
+      padding-top: 26px;
+    }
   }
 
   svg {
     width: 64px;
     height: 64px;
-    margin-right: 0.75em;
-    margin: -4px 0.75em 0 -4px;
+    margin-right: .75em;
+    margin: -4px .75em 0 -4px;
   }
 }
 
@@ -210,6 +190,18 @@ label {
 
   @include medium {
     padding: 0;
+  }
+}
+
+.contribute {
+  margin: 18px 24px 12px;
+  padding: 24px 0 12px;
+  border-top: solid 1px var(--bg-light);
+  font-size: .8em;
+
+  a {
+    display: block;
+    margin-top: .33em;
   }
 }
 
@@ -223,10 +215,10 @@ a.fonts-nav-link {
   padding: 12px;
   text-decoration: none;
   color: var(--text);
-  transition: all 0.3s ease-out;
+  transition: all .3s ease-out;
   margin: 0 12px;
   border-radius: 6px;
-
+  
   @include medium {
     margin: 0;
     border-radius: 0;
@@ -243,7 +235,7 @@ a.fonts-nav-link {
       height: 15px;
       display: block;
       opacity: 0;
-      transform: translateX(-50%) scale(0.75);
+      transform: translateX(-50%) scale(.75);
     }
   }
 
@@ -255,23 +247,22 @@ a.fonts-nav-link {
   &:hover {
     color: white;
   }
-
+  
   &.active {
     background-color: var(--bg-highlight);
     color: white;
     font-weight: 700;
-
+    
     &:after {
       opacity: 1;
       transform: none;
-      transition: all 0.45s ease-out 0.075s;
+      transition: all .45s ease-out .075s;
     }
   }
 }
 
 .fonts-nav-item {
-  animation: enter-fonts-nav-item 0.6s ease-in-out
-    calc((var(--i) - (1 / (var(--i) * var(--i)))) * 0.05s + 0.3s) 1 backwards;
+  animation: enter-fonts-nav-item .6s ease-in-out calc((var(--i) - (1 / (var(--i) * var(--i)))) * .05s + .3s) 1 backwards;
   @keyframes enter-fonts-nav-item {
     from {
       opacity: 0;
@@ -293,7 +284,7 @@ main {
 }
 
 .screenshot-stage {
-  --transition-duration: 0.2333s;
+  --transition-duration: .2333s;
   --transition-timing: ease-out;
   --transition: all var(--transition-duration) var(--transition-timing);
   position: relative;
@@ -312,7 +303,7 @@ main {
   @include only-small {
     margin: 6px;
   }
-
+  
   &:after {
     content: '';
     position: absolute;
@@ -321,26 +312,25 @@ main {
     bottom: 0;
     left: 0;
     background-color: var(--bg-dark);
-    transition: background-color var(--transition-duration)
-      cubic-bezier(0, 0.91, 0.11, 1);
+    transition: background-color var(--transition-duration) cubic-bezier(0,.91,.11,1);
     z-index: -1;
   }
 
-  [value='light']:checked ~ & {
+  [value=light]:checked ~ & {
     &:after {
       background-color: var(--bg-light-theme);
       // transition-timing-function: cubic-bezier(0,.91,.11,1)
     }
-
+    
     .controls {
       background-color: var(--bg-light-theme-darker);
-
+      
       label {
-        --inactive-text: var(--bg-dark);
+        --inactive-text: var(--bg-dark)
       }
     }
   }
-
+  
   @include large {
     flex: 1600px 0 1;
     margin: 0;
@@ -355,7 +345,7 @@ main {
   padding-bottom: 75%;
   max-width: 100%;
   position: relative;
-
+  
   .screenshot {
     position: absolute;
     top: 0;
@@ -384,7 +374,7 @@ $languages: html, css, js, charmap;
   @include only-small {
     padding: 3px 3px 0;
   }
-
+  
   .controls {
     display: flex;
     background-color: var(--bg-light);
@@ -397,7 +387,7 @@ $languages: html, css, js, charmap;
       weight: 500;
     }
     --active: var(--highlight);
-
+    
     html.theme-blue & {
       --active: var(--bg-highlight);
     }
@@ -406,7 +396,7 @@ $languages: html, css, js, charmap;
       --inactive-text: white;
       display: block;
       line-height: 1;
-      padding: 0.5em 1em;
+      padding: .5em 1em;
       color: white;
       cursor: pointer;
       border-radius: 6px;
@@ -415,7 +405,7 @@ $languages: html, css, js, charmap;
       z-index: 1;
     }
   }
-
+  
   .controls.with-widths {
     &:after {
       content: '';
@@ -426,21 +416,21 @@ $languages: html, css, js, charmap;
       background-color: var(--active);
       border-radius: 6px;
       z-index: 0;
-      transition: all 0.15s ease-out;
+      transition: all .15s ease-out;
 
       @each $language in $languages {
-        [value='#{$language}']:checked ~ .screenshot-stage & {
+        [value=#{$language}]:checked ~ .screenshot-stage & {
           left: var(--left-#{$language});
           width: var(--width-#{$language});
         }
       }
     }
-
+    
     label {
       --active: transparent;
     }
   }
-
+    
   .theme-controls {
     border-radius: 16px;
     width: 32px;
@@ -450,7 +440,7 @@ $languages: html, css, js, charmap;
     justify-content: center;
     align-items: center;
     background-color: transparent;
-
+    
     label {
       position: absolute;
       border-radius: inherit;
@@ -464,12 +454,12 @@ $languages: html, css, js, charmap;
       }
       color: white;
       transition: var(--transition);
-
-      &[data-theme='dark'] {
+      
+      &[data-theme=dark] {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'%3E%3C/path%3E%3C/svg%3E");
       }
-
-      &[data-theme='light'] {
+      
+      &[data-theme=light] {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' stroke='%232D2D2D' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'%3E%3Ccircle cx='12' cy='12' r='5'%3E%3C/circle%3E%3Cline x1='12' y1='1' x2='12' y2='3'%3E%3C/line%3E%3Cline x1='12' y1='21' x2='12' y2='23'%3E%3C/line%3E%3Cline x1='4.22' y1='4.22' x2='5.64' y2='5.64'%3E%3C/line%3E%3Cline x1='18.36' y1='18.36' x2='19.78' y2='19.78'%3E%3C/line%3E%3Cline x1='1' y1='12' x2='3' y2='12'%3E%3C/line%3E%3Cline x1='21' y1='12' x2='23' y2='12'%3E%3C/line%3E%3Cline x1='4.22' y1='19.78' x2='5.64' y2='18.36'%3E%3C/line%3E%3Cline x1='18.36' y1='5.64' x2='19.78' y2='4.22'%3E%3C/line%3E%3C/svg%3E");
         background-color: var(--bg-light-theme-darker);
       }
@@ -478,29 +468,29 @@ $languages: html, css, js, charmap;
 }
 
 @each $theme in $themes {
-  [value='#{$theme}']:not(:checked) ~ .screenshot-stage {
-    .screenshot-controls [data-theme='#{$theme}'] {
+  [value=#{$theme}]:not(:checked) ~ .screenshot-stage {    
+    .screenshot-controls [data-theme=#{$theme}] {
       opacity: 0;
-      transition: opacity 0.3s ease-out;
+      transition: opacity .3s ease-out;
       z-index: 2;
     }
 
-    .screenshot-wrapper [data-theme='#{$theme}'] {
+    .screenshot-wrapper [data-theme=#{$theme}] {
       opacity: 0;
       pointer-events: none;
-      transition: none; //var(--transition);
+      transition: none;//var(--transition);
     }
   }
 }
 
 @each $language in $languages {
-  [value='#{$language}']:not(:checked) ~ .screenshot-stage {
-    .screenshot-controls [data-language='#{$language}'] {
+  [value=#{$language}]:not(:checked) ~ .screenshot-stage {
+    .screenshot-controls [data-language=#{$language}] {
       background-color: transparent;
       color: var(--inactive-text, white);
     }
-
-    .screenshot-wrapper [data-language='#{$language}'] {
+    
+    .screenshot-wrapper [data-language=#{$language}] {
       opacity: 0;
       pointer-events: none;
       // transition: none;
@@ -511,7 +501,7 @@ $languages: html, css, js, charmap;
 .details {
   margin: 24px;
   word-break: break-word;
-
+  
   @include large {
     flex: 314px 0 0;
     margin-right: 60px;
@@ -540,8 +530,7 @@ $languages: html, css, js, charmap;
 
   .enter {
     @include medium {
-      animation: enter-details 0.3s ease-in-out calc(var(--i) * 0.05s) 1
-        backwards;
+      animation: enter-details .3s ease-in-out calc(var(--i) * .05s) 1 backwards;
       @keyframes enter-details {
         from {
           opacity: 0;
@@ -584,7 +573,7 @@ ul.features {
     width: 18px;
     height: 13px;
     background-image: url("data:image/svg+xml,%3Csvg width='18' height='13' viewBox='0 0 18 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17 1L6 12L1 7' stroke='%23848484' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-
+    
     html.theme-blue & {
       background-image: url("data:image/svg+xml,%3Csvg width='18' height='13' viewBox='0 0 18 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17 1L6 12L1 7' stroke='%23789bab' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     }
@@ -594,7 +583,7 @@ ul.features {
     width: 14px;
     height: 14px;
     background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 1L1 13' stroke='%23848484' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1 1L13 13' stroke='%23848484' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-
+    
     html.theme-blue & {
       background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 1L1 13' stroke='%23789bab' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1 1L13 13' stroke='%23789bab' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     }

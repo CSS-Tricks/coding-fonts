@@ -4,32 +4,23 @@
 }
 
 html {
-  --bg-main: #333333;
-  --bg-dark: #2d2d2d;
-  --bg-light: #424242;
-  --bg-light-theme: #fafafa;
-  --highlight: #ff006a;
-  --bg-highlight: #2e141e;
-  --body: #9b9b9b;
-  --body-dark: #848484;
-  --bg-light-theme-darker: #ececec;
-  --header-height: 108px;
-  --header-shadow: 0 2px 24px rgba(0, 0, 0, 0.075);
-}
-html.theme-blue {
-  --bg-main: hsl(199, 15%, 13%);
+  --bg-light-theme: #FAFAFA;
   --bg-dark: #263238;
+  --bg-light-theme-darker: #ececec;
+  --bg-main: hsl(199, 15%, 13%);
   --bg-darker: hsl(199, 15%, 12%);
   --bg-light: hsl(200, 23%, 28%);
   --body: rgb(120, 155, 171);
   --body-dark: hsl(199, 23%, 52%);
   --highlight: #ff4592;
   --bg-highlight: #db045d;
+  --header-shadow: 0 2px 24px rgba(0,0,0,.225);
+  --header-height: 108px;
 }
 
 ::selection {
   background-color: var(--highlight);
-  color: var(--bg-highlight);
+  color: white;
 }
 
 body {
@@ -55,13 +46,7 @@ ul {
   padding: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-blockquote {
+h1, h2, h3, h4, h5, h6, blockquote {
   line-height: 1;
   margin: 0;
   font: inherit;
@@ -143,14 +128,6 @@ label {
     position: sticky;
     top: 0;
   }
-  .sidebar::-webkit-scrollbar {
-    width: 10px;
-    background: var(--bg-main);
-  }
-  .sidebar::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: var(--bg-light);
-  }
 }
 
 .sidebar-header {
@@ -167,12 +144,18 @@ label {
   top: 0;
   z-index: 9;
   box-shadow: var(--header-shadow);
+  transition: box-shadow 0.3s ease-out;
 }
 @media screen and (min-width: 900px) {
   .sidebar-header {
     position: sticky;
     width: 100%;
+  }
+  .sidebar-header:not(.stuck) {
     box-shadow: none;
+  }
+  .sidebar-header.stuck {
+    padding-top: 26px;
   }
 }
 .sidebar-header svg {
@@ -189,6 +172,17 @@ label {
   .fonts-nav {
     padding: 0;
   }
+}
+
+.contribute {
+  margin: 18px 24px 12px;
+  padding: 24px 0 12px;
+  border-top: solid 1px var(--bg-light);
+  font-size: 0.8em;
+}
+.contribute a {
+  display: block;
+  margin-top: 0.33em;
 }
 
 a.fonts-nav-link {
@@ -244,7 +238,7 @@ a.fonts-nav-link.active:after {
 }
 
 .fonts-nav-item {
-  animation: enter-fonts-nav-item 0.6s ease-in-out calc((var(--i) - (1 / (var(--i) * var(--i)))) * 0.05s + 0.3s) 1 backwards;
+  animation: enter-fonts-nav-item 0.6s ease-in-out calc((var(--i) - (1 / (var(--i) * var(--i)))) * .05s + .3s) 1 backwards;
 }
 @keyframes enter-fonts-nav-item {
   from {
@@ -267,7 +261,7 @@ a.fonts-nav-link.active:after {
 }
 
 .screenshot-stage {
-  --transition-duration: 0.2333s;
+  --transition-duration: .2333s;
   --transition-timing: ease-out;
   --transition: all var(--transition-duration) var(--transition-timing);
   position: relative;
@@ -307,7 +301,7 @@ a.fonts-nav-link.active:after {
   background-color: var(--bg-light-theme-darker);
 }
 [value=light]:checked ~ .screenshot-stage .controls label {
-  --inactive-text: var(--bg-dark);
+  --inactive-text: var(--bg-dark) ;
 }
 @media screen and (min-width: 1366px) {
   .screenshot-stage {
@@ -525,7 +519,7 @@ html.theme-blue .screenshot-controls .controls {
 }
 @media screen and (min-width: 900px) {
   .details .enter {
-    animation: enter-details 0.3s ease-in-out calc(var(--i) * 0.05s) 1 backwards;
+    animation: enter-details 0.3s ease-in-out calc(var(--i) * .05s) 1 backwards;
   }
   @keyframes enter-details {
     from {
