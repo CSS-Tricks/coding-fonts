@@ -37,6 +37,18 @@ body {
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @include medium {
+    &::-webkit-scrollbar {
+      width: 10px;
+      background: var(--bg-main);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: var(--bg-dark);
+    }
+  }
 }
 
 body.no-transition * {
