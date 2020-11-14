@@ -238,7 +238,7 @@ a.fonts-nav-link {
   border-radius: 6px;
 
   @include medium {
-    padding: 9px 24px;
+    padding: 9px 12px;
 
     &:after {
       content: '';
@@ -246,7 +246,7 @@ a.fonts-nav-link {
         image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.65685 12.7929L10.7377 7.13605L7.65685 1.47919' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
         size: 100%;
       }
-      margin-right: -12px;
+      margin-right: -6px;
       width: 15px;
       height: 15px;
       display: block;
