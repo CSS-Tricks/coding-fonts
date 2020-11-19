@@ -10,7 +10,7 @@ repo_url: https://github.com/arrowtype/recursive
 license:
   - name: SIL OPEN FONT LICENSE
     url: https://github.com/arrowtype/recursive/blob/main/OFL.txt
-ligatures: false
+ligatures: true
 italics: true
 variable: true
 stylesheet_url: recursive/style.css
