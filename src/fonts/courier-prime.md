@@ -3,7 +3,7 @@ title: Courier Prime
 designers:
   - name: Alan Dague-Greene
   - name: Howard Kettler
-home_url: https://fonts.google.com/specimen/Inconsolata
+home_url: https://fonts.google.com/specimen/Courier+Prime
 license:
   - name: Open Font License
     url: https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
