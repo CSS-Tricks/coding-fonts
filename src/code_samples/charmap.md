@@ -9,10 +9,10 @@ title: Character Map Sample
 <span>· • * # ․ / ( ) { } [ ] - _ ‹ › " ' `</span></code>
 
 <div style="display: flex">
-<div style="font-variant-ligatures: none;"><code class="lang-js">== ===  != !== =/=</code>
-<code class="lang-js"><= >= &&  ?? || ++</code>
-<code class="lang-js">=> // /* */ /= /==</code>
-<code class="lang-html">&lt;/ &lt;/&gt; /&gt; &lt;!-- --&gt;</code>
+<div><code class="lang-js" style="font-variant-ligatures: none; font-feature-settings: normal;">== ===  != !== =/=</code>
+<code class="lang-js" style="font-variant-ligatures: none; font-feature-settings: normal;"><= >= &&  ?? || ++</code>
+<code class="lang-js" style="font-variant-ligatures: none; font-feature-settings: normal;">=> // /* */ /= /==</code>
+<code class="lang-html" style="font-variant-ligatures: none; font-feature-settings: normal;">&lt;/ &lt;/&gt; /&gt; &lt;!-- --&gt;</code>
 </div>
 <div id="ligatures" style="font-variant-ligatures: auto;"><span style="opacity: .1">  |  </span><code class="lang-js">== ===  != !== =/=</code>
 <span style="opacity: .1">  |  </span><code class="lang-js"><= >= &&  ?? || ++</code>
