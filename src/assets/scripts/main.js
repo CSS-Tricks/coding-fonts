@@ -34,7 +34,7 @@ function setStateFromUrlParams () {
   }
 }
 
-function goto (href) {
+function goto (href, pushToHistory) {
   function revertToRegularNavigation () {
     location.href = href;
   }
@@ -47,7 +47,7 @@ function goto (href) {
         $main = response.querySelector('[data-site-main]');
     if ($main) {
       document.querySelector('[data-site-main]').innerHTML = $main.innerHTML;
-      history.pushState({}, title, href);
+      if (pushToHistory) history.pushState({}, title, href);
       document.title = title;
       document.querySelectorAll('[data-nav-item]').forEach(function ($a) {
         $a.classList.toggle('active', $a.href === href || $a.getAttribute('href') === href)
@@ -85,7 +85,7 @@ function setupAjaxNavigation () {
         return
       }
 
-      goto(href);
+      goto(href, true);
     })
   })
 }
@@ -123,5 +123,9 @@ window.addEventListener('load', function () {
   setupLanguageControlsStyle();
   setupStickyObserver();
 })
+
+window.addEventListener('popstate', function() {
+  goto(document.location.href, false);
+});
 
 // TODO: polyfill URLSearchParams for IE11? (https://github.com/jerrybendy/url-search-params-polyfill)
