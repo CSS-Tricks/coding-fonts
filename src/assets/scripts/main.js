@@ -88,6 +88,47 @@ function setupAjaxNavigation () {
       goto(href, true);
     })
   })
+
+  // If the mouse is hovered over the navigation block, the 'n' and
+  // 'p' keys will navigate to the next or previous link from the
+  // currently displayed one.
+
+  var fontsnav = document.querySelector('.fonts-nav');
+
+  fontsnav.addEventListener('mouseover', function () {
+    this.classList.add('hovered');
+  });
+
+  fontsnav.addEventListener('mouseout', function () {
+    this.classList.remove('hovered');
+  });
+
+  document.addEventListener('keydown', function (evt) {
+    if (!fontsnav.classList.contains('hovered')) {
+      // This event was not meant for us; do nothing.
+      return;
+    }
+    evt.preventDefault();
+    var key = evt.key.toLowerCase();
+    var step = key === 'n' ? 1 : key === 'p' ? -1 : 0;
+    if (step === 0) {
+      return;
+    }
+    var nodes = Array.from(document.querySelectorAll('[data-nav-item]'));
+    var pos = nodes.findIndex(function (node) {
+      return node.href === location.href;
+    });
+    if (
+      pos === -1 ||
+      (step === -1 && pos === 0) ||
+      (step === 1 && pos === nodes.length - 1)
+    ) {
+      return;
+    }
+    nodes[pos + step].scrollIntoView({ block: 'center' });
+    goto(nodes[pos + step].href, true);
+  });
+
 }
 
 function setupLanguageControlsStyle () {
