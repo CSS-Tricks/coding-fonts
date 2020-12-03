@@ -3,21 +3,21 @@ layout: base
 ---
 
 {%- for theme in samples.themes -%}
-  <input type="radio" 
-  hidden 
-  name="theme" 
-  value="{{theme}}" 
-  id="control-theme-{{theme}}" 
+  <input type="radio"
+  hidden
+  name="theme"
+  value="{{theme}}"
+  id="control-theme-{{theme}}"
   {{ 'checked' if loop.index === 1 }}
   oninput="setUrlParam(this.name, this.value)"
   >
 {%- endfor -%}
 {%- for language in samples.languages -%}
-  <input type="radio" 
-  hidden 
-  name="language" 
-  value="{{language.value}}" 
-  id="control-language-{{language.value}}" 
+  <input type="radio"
+  hidden
+  name="language"
+  value="{{language.value}}"
+  id="control-language-{{language.value}}"
   {{ 'checked' if loop.index === 1 }}
   oninput="setUrlParam(this.name, this.value)"
   >
@@ -29,12 +29,12 @@ layout: base
       theme = params.get('theme'),
       language = params.get('language');
 
-    if (theme) 
+    if (theme)
       document
         .getElementById('control-theme-' + theme)
         .checked = true;
-    
-    if (language) 
+
+    if (language)
       document
         .getElementById('control-language-' + language)
         .checked = true;
@@ -55,7 +55,8 @@ layout: base
     {%- for theme in samples.themes -%}
       {%- for language in samples.languages -%}
         <div class="screenshot" data-theme="{{theme}}" data-language="{{language.value}}">
-          <img 
+          <img
+            alt="{{language.value}} example of {{title}} in {{theme}} mode"
             onerror="this.style.display='none'"
             srcset="
               {{images.urlPrefixLarge}}{{images.imageLocation}}/screenshots/{{title | slug}}/{{language.value}}-{{theme}}.png 1600w,
