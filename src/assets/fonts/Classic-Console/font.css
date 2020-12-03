@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Classic Console";
+  src: local('*'), url(clacon.woff2) format('woff2');
+}
+
+pre[class*='language-'] {
+  font-size: 20px;
+  line-height: 20px;
+}
