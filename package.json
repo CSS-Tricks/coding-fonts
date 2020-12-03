@@ -29,6 +29,7 @@
   "homepage": "https://github.com/chriscoyier/coding-fonts#readme",
   "dependencies": {
     "fs": "0.0.1-security",
+    "html-minifier": "^4.0.0",
     "minimist": "^1.2.5",
     "prettier": "^2.1.2",
     "puppeteer": "^5.3.1"
