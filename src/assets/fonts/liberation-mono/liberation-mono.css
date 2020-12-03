@@ -1,0 +1,36 @@
+
+@font-face {
+    font-family: 'liberation_mono';
+    src: url('liberationmono-bold-webfont.woff2') format('woff2'),
+         url('liberationmono-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'liberation_mono';
+    src: url('liberationmono-bolditalic-webfont.woff2') format('woff2'),
+         url('liberationmono-bolditalic-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'liberation_mono';
+    src: url('liberationmono-italic-webfont.woff2') format('woff2'),
+         url('liberationmono-italic-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'liberation_mono';
+    src: url('liberationmono-regular-webfont.woff2') format('woff2'),
+         url('liberationmono-regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+
+}
