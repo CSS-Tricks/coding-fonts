@@ -13,9 +13,8 @@ module.exports = function (config) {
     return fonts;
   });
 
-  // environment is production build :: minify html
-  // https://www.11ty.dev/docs/data-js/#example-exposing-environment-variables
-  if (process.env.ELEVENTY_ENV === 'production') {
+  // is production build (netlify) :: minify html
+  if (process.env.PROD === 'true') {
     // pulled from Eleventy docs
     // https://www.11ty.dev/docs/config/#transforms-example-minify-html-output
     config.addTransform('htmlmin', function (content, outputPath) {
