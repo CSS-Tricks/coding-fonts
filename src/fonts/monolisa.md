@@ -1,12 +1,12 @@
 ---
 title: MonoLisa
 designers:
-  - name: Andrey Okonetchnikov
+  - name: Marcus Sterz
 home_url: https://www.monolisa.dev/
 license:
   - name: FaceType – End User License Agreement (EULA)
     url: https://www.monolisa.dev/license
-cost: $79 - $399
+cost: $69 - $299
 ligatures: true
 italics: true
 variable: false
