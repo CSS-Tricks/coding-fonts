@@ -1,3 +1,5 @@
+const htmlmin = require('html-minifier');
+
 module.exports = function (config) {
   config.addPassthroughCopy('src/assets');
   config.addPassthroughCopy('src/favicon.ico');
@@ -10,6 +12,24 @@ module.exports = function (config) {
       .sort((a, b) => (b.data.title < a.data.title ? 1 : -1));
     return fonts;
   });
+
+  // is production build (netlify) :: minify html
+  if (process.env.PROD === 'true') {
+    // pulled from Eleventy docs
+    // https://www.11ty.dev/docs/config/#transforms-example-minify-html-output
+    config.addTransform('htmlmin', function (content, outputPath) {
+      if (outputPath && outputPath.endsWith('.html')) {
+        let minified = htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true
+        });
+        return minified;
+      }
+
+      return content;
+    });
+  }
 
   return {
     dir: {

@@ -10,13 +10,13 @@ title: Character Map Sample
 
 <div style="display: flex">
 <div><code class="lang-js" style="font-variant-ligatures: none; font-feature-settings: normal;">== ===  != !== =/=</code>
-<code class="lang-js" style="font-variant-ligatures: none; font-feature-settings: normal;"><= >= &&  ?? || ++</code>
-<code class="lang-js" style="font-variant-ligatures: none; font-feature-settings: normal;">=> // /* */ /= /==</code>
+<code class="lang-js" style="font-variant-ligatures: none; font-feature-settings: normal;">&lt;= &gt;= &&  ?? || ++</code>
+<code class="lang-js" style="font-variant-ligatures: none; font-feature-settings: normal;">=&gt; // /* */ /= /==</code>
 <code class="lang-html" style="font-variant-ligatures: none; font-feature-settings: normal;">&lt;/ &lt;/&gt; /&gt; &lt;!-- --&gt;</code>
 </div>
 <div id="ligatures" style="font-variant-ligatures: auto;"><span style="opacity: .1">  |  </span><code class="lang-js">== ===  != !== =/=</code>
-<span style="opacity: .1">  |  </span><code class="lang-js"><= >= &&  ?? || ++</code>
-<span style="opacity: .1">  |  </span><code class="lang-js">=> // /* */ /= /==</code>
+<span style="opacity: .1">  |  </span><code class="lang-js">&lt;= &gt;= &&  ?? || ++</code>
+<span style="opacity: .1">  |  </span><code class="lang-js">=&gt; // /* */ /= /==</code>
 <span style="opacity: .1">  |  </span><code class="lang-html">&lt;/ &lt;/&gt; /&gt; &lt;!-- --&gt;</code>
 </div></div><div style="display: flex">
 <div style="margin-right: 1rem;">
