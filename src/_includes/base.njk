@@ -7,10 +7,19 @@
     <link
       rel="stylesheet"
       href="https://cloud.typography.com/610186/6080612/css/fonts.css"
-/>
+    />
     <link rel="stylesheet" href="/assets/styles/style.css"/>
     <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
     <title>Coding Fonts{{' — ' + title if title}}</title>
+    {% if title %}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@css" />
+      <meta name="twitter:creator" content="@css" />
+      <meta property="og:url" content="{{images.imageLocation}}/fonts/{{title | slug}}/" />
+      <meta property="og:title" content="{{title}}" />
+      <meta property="og:description" content="font designed for writing code" />
+      <meta property="og:image" content="{{images.imageLocation}}/screenshots/{{title | slug}}/js-dark.png" />
+    {% endif %}
   </head>
 
   <body>
