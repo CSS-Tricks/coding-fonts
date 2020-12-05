@@ -12,6 +12,15 @@
     <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
     <title>Coding Fonts{{' — ' + title if title}} on CSS-Tricks</title>
     <meta name="description" content="Information about {{ "coding fonts" if not title}}{{"the coding font " + title if title}}: designers, character charts, features, and more.">
+    {% if title %}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@css" />
+      <meta name="twitter:creator" content="@css" />
+      <meta property="og:url" content="{{images.imageLocation}}/fonts/{{title | slug}}/" />
+      <meta property="og:title" content="{{title}}" />
+      <meta property="og:description" content="font designed for writing code" />
+      <meta property="og:image" content="{{images.imageLocation}}/screenshots/{{title | slug}}/js-dark.png" />
+    {% endif %}
   </head>
 
   <body>
