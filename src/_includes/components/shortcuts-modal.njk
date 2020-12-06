@@ -1,0 +1,51 @@
+<button class="modal-toggle" id="shortcuts-modal-toggle" onclick="toggleShortcutsModal()" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640"><path d="M149 161H46c-21 0-38-17-38-38V53c0-21 17-38 38-38h103c21 0 38 17 38 38v70c0 21-17 38-38 38zM418 161H315c-21 0-38-17-38-38V53c0-21 17-38 38-38h103c21 0 38 17 38 38v70c0 21-17 38-38 38zM687 161H584c-21 0-38-17-38-38V53c0-21 17-38 38-38h103c21 0 38 17 38 38v70c0 21-17 38-38 38zM956 161H853c-21 0-38-17-38-38V53c0-21 17-38 38-38h103c21 0 38 17 38 38v70c0 21-17 38-38 38zM149 399H46c-21 0-38-17-38-38v-70c0-21 17-38 38-38h103c21 0 38 17 38 38v70c0 21-17 38-38 38zM418 399H315c-21 0-38-17-38-38v-70c0-21 17-38 38-38h103c21 0 38 17 38 38v70c0 21-17 38-38 38zM687 399H584c-21 0-38-17-38-38v-70c0-21 17-38 38-38h103c21 0 38 17 38 38v70c0 21-17 38-38 38zM956 399H853c-21 0-38-17-38-38v-70c0-21 17-38 38-38h103c21 0 38 17 38 38v70c0 21-17 38-38 38zM812 622H190c-21 0-38-17-38-38v-46c0-21 17-38 38-38h622c21 0 38 17 38 38v46c0 21-17 38-38 38z"/></svg>
+</button>
+
+<div class="modal hidden" id="shortcuts-modal">
+  <div class="content">
+    <header>
+      <h2>Keyboard shortcuts</h2>
+      <button class="close" onclick="toggleShortcutsModal()" aria-hidden="true">Close</button>
+    </header>
+    <ul class="shortcuts-categories">
+      <li>
+        <h3>Navigation</h3>
+        <ul>
+          <li class="shortcut">
+            <span class="keyboard-key">n</span>Next font
+        </li>
+          <li class="shortcut">
+            <span class="keyboard-key">p</span>Previous font
+        </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Languages</h3>
+        <ul>
+          {%- for language in samples.languages -%}
+            <li class="shortcut">
+              <span class="keyboard-key">{{- loop.index -}}</span>{{- language.label -}}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </li>
+      <li>
+        <h3>Theme</h3>
+        <ul>
+          <li class="shortcut">
+            <span class="keyboard-key">t</span>Toggle theme
+        </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Misc</h3>
+        <ul>
+          <li class="shortcut">
+            <span class="keyboard-key">?</span>Toggle this keybaord shortcuts modal
+        </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

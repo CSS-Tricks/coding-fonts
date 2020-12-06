@@ -15,7 +15,7 @@ html {
   --body-dark: hsl(199, 23%, 52%);
   --highlight: #ff4592;
   --bg-highlight: #db045d;
-  --header-shadow: 0 2px 24px rgba(0, 0, 0, 0.225);
+  --header-shadow: 0 2px 24px rgba(0, 0, 0, 0.225), 0 1px 2px rgba(0,0,0,.125);
   --header-height: 108px;
 }
 
@@ -606,5 +606,165 @@ ul.features {
     width: 14px;
     height: 14px;
     background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 1L1 13' stroke='%23789bab' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1 1L13 13' stroke='%23789bab' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+}
+
+button:focus:not(:focus-visible) { 
+  outline: none 
+}
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--body);
+
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--bg-light);
+    opacity: .85;
+    transition: opacity 0.3s ease-out;
+  }
+
+  .content {
+    position: relative;
+    background-color: var(--bg);
+    padding: 36px;
+    margin: 24px;
+    border-radius: 24px;
+    box-shadow: var(--header-shadow);
+    transition: all 0.3s ease-out 0.15s;
+  }
+
+  header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .close {
+    --webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    color: var(--body-dark);
+    transition: color .15s ease-out;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--body);
+    }
+  }
+
+  li {
+    list-style: none;
+  }
+
+  h2 {
+    font-size: 21px;
+    font-weight: 500;
+    color: white;
+  }
+  
+  h3 {
+    margin-top: 12px;
+    margin-bottom: 6px;
+    color: white;
+    font-weight: 500;
+  }
+
+  .shortcuts-categories {
+    @include medium {
+      display: flex;
+      flex-wrap: wrap;
+      
+      > li {
+        flex: 50% 0 0;
+      }
+    }
+  }
+
+  .shortcut {
+    display: flex;
+    align-items: baseline;
+    font-size: 12px;
+  }
+
+  .keyboard-key {
+    display: inline-block;
+    color: white;
+    background-color: var(--bg-dark);
+    padding: .15em .25em;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 3px 6px 3px 0;
+  }
+
+  &.hidden {
+    // opacity: 0;
+    // pointer-events: none;
+    // transition: none;
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+    
+    &:before {
+      opacity: 0;
+      transition: none;
+    }
+    
+    .content {
+      opacity: 0;
+      transition: none;
+      transform: scale(.97);
+    }
+  }
+}
+
+.modal-toggle {
+  --webkit-appearance: none;
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  font-size: 18px;
+  position: fixed;
+  bottom: 0;
+  left: calc(256px - 2em - 12px);
+  padding: 6px;
+  transition: opacity .15s ease-out;
+  cursor: pointer;
+  display: none;
+
+  @include medium {
+    display: block;
+  }
+
+  &:not(:hover) {
+    opacity: .25;
+  }
+
+  svg {
+    width: 1em;
+  }
+
+  path {
+    fill: var(--body-dark);
   }
 }

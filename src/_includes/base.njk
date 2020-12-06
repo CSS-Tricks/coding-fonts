@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="preconnect" href="//res.cloudinary.com" crossorigin>
     <link
       rel="stylesheet"
       href="https://cloud.typography.com/610186/6080612/css/fonts.css"
-    />
+/>
     <link rel="stylesheet" href="/assets/styles/style.css"/>
-    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico'/>
     <title>Coding Fonts{{' — ' + title if title}} on CSS-Tricks</title>
     <meta name="description" content="Information about {{ "coding fonts" if not title}}{{"the coding font " + title if title}}: designers, character charts, features, and more.">
     {% if title %}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@css" />
-      <meta name="twitter:creator" content="@css" />
-      <meta property="og:url" content="{{images.imageLocation}}/fonts/{{title | slug}}/" />
-      <meta property="og:title" content="{{title}}" />
-      <meta property="og:description" content="font designed for writing code" />
-      <meta property="og:image" content="{{images.imageLocation}}/screenshots/{{title | slug}}/js-dark.png" />
+      <meta name="twitter:card" content="summary_large_image"/>
+      <meta name="twitter:site" content="@css"/>
+      <meta name="twitter:creator" content="@css"/>
+      <meta property="og:url" content="{{images.imageLocation}}/fonts/{{title | slug}}/"/>
+      <meta property="og:title" content="{{title}}"/>
+      <meta property="og:description" content="font designed for writing code"/>
+      <meta property="og:image" content="{{images.imageLocation}}/screenshots/{{title | slug}}/js-dark.png"/>
     {% endif %}
   </head>
 
@@ -66,6 +66,7 @@
       </main>
     </div>
 
+    {% include 'components/shortcuts-modal.njk' %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iamdustan-smoothscroll/0.4.0/smoothscroll.min.js"></script>
     <script src="/assets/scripts/main.js"></script>
   </body>

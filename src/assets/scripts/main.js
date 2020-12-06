@@ -89,10 +89,7 @@ function setupAjaxNavigation () {
     })
   })
 
-  // If the mouse is hovered over the navigation block, the 'n' and
-  // 'p' keys will navigate to the next or previous link from the
-  // currently displayed one.
-
+  /*
   var fontsnav = document.querySelector('.fonts-nav');
 
   fontsnav.addEventListener('mouseover', function () {
@@ -102,33 +99,59 @@ function setupAjaxNavigation () {
   fontsnav.addEventListener('mouseout', function () {
     this.classList.remove('hovered');
   });
+  */
 
+  // Handle keyboard shortcuts
   document.addEventListener('keydown', function (evt) {
+    /*
     if (!fontsnav.classList.contains('hovered')) {
       // This event was not meant for us; do nothing.
       return;
     }
-    evt.preventDefault();
+    */
     var key = evt.key.toLowerCase();
-    var step = key === 'n' ? 1 : key === 'p' ? -1 : 0;
-    if (step === 0) {
-      return;
-    }
-    var nodes = Array.from(document.querySelectorAll('[data-nav-item]'));
-    var pos = nodes.findIndex(function (node) {
-      return node.href === location.href;
-    });
-    if (
-      pos === -1 ||
-      (step === -1 && pos === 0) ||
-      (step === 1 && pos === nodes.length - 1)
-    ) {
-      return;
-    }
-    nodes[pos + step].scrollIntoView({ block: 'center' });
-    goto(nodes[pos + step].href, true);
-  });
 
+    // navigate fonts with n(ext) and p(revious)
+    if (['n', 'p'].includes(key)) {
+      evt.preventDefault()
+        var step = key === 'n' ? 1 : -1;
+        var nodes = Array.from(document.querySelectorAll('[data-nav-item]'));
+        var pos = nodes.findIndex(function (node) {
+          return node.href === location.href;
+        });
+        if (
+          pos === -1 ||
+          (step === -1 && pos === 0) ||
+          (step === 1 && pos === nodes.length - 1)
+        ) {
+          return;
+        }
+        nodes[pos + step].scrollIntoView({ block: 'center' });
+        goto(nodes[pos + step].href, true);
+
+    // switch language with numbers
+    } else if (/\d/.test(key)) { // any digit
+      evt.preventDefault()
+      var langControl = document.querySelectorAll('[name=language]')[+key - 1]
+      if (langControl)
+        langControl.click()
+
+    // toggle theme with t
+    } else if (key === 't') {
+      evt.preventDefault()
+      document.querySelector('[name=theme]:not(:checked)').click()
+    }
+
+    // toggle shortcuts modal with ?
+    else if (key === '?') {
+      evt.preventDefault()
+      toggleShortcutsModal()
+    }
+  });
+}
+
+function toggleShortcutsModal () {
+  document.getElementById('shortcuts-modal').classList.toggle('hidden')
 }
 
 function setupLanguageControlsStyle () {
