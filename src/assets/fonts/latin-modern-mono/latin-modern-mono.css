@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Latin Modern Mono';
+  src: url('woff2/lmmono10-regular-webfont.woff2') format('woff2'),
+    url('woff/lmmono10-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Latin Modern Mono';
+  src: url('woff2/lmmono10-italic-webfont.woff2') format('woff2'),
+    url('woff/lmmono10-italic-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+pre,
+code {
+  font-feature-settings: 'zero', 'ss01';
+  font-variant-ligatures: contextual;
+}
