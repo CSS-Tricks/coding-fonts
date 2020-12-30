@@ -4,3 +4,8 @@
   font-weight: 400;
   font-style: normal;
 }
+
+/* Reduce font-size to make entire code samples visible in screenshots */
+code {
+  font-size: 0.7em;
+}
