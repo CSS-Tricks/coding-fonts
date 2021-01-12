@@ -1,14 +1,14 @@
 {
   "name": "coding-fonts",
   "version": "1.0.0",
-  "description": "Some kind of visual look at coding fonts",
+  "description": "A visual look at coding fonts!",
   "main": "main.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
     "build": "ELEVENTY_ENV=production eleventy",
-    "serve": "ELEVENTY_ENV=development eleventy --serve & npm run sass:watch",
+    "dev": "ELEVENTY_ENV=development eleventy --serve & npm run sass:watch",
     "sass:watch": "sass --watch src/assets/styles/sass/style.scss:src/assets/styles/style.css",
     "screenshots": "npm run screenshots:js && npm run screenshots:html && npm run screenshots:css && npm run screenshots:charmap",
     "screenshots:js": "node take_screenshots.js --lang js --theme light --font \"$FONT\" && node take_screenshots.js --lang js --theme dark --font \"$FONT\"",
