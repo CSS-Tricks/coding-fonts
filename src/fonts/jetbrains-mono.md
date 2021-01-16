@@ -11,7 +11,8 @@ cost: free
 ligatures: true
 italics: true
 variable: false
-stylesheet_url: jetbrains-mono/jetbrains-mono.css
+stylesheet_url: https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap
+stylesheet_absolute: true
 ---
 
 A typeface for developers.
