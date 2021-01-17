@@ -10,7 +10,7 @@ license:
 cost: free
 ligatures: true
 italics: true
-variable: false
+variable: true
 stylesheet_url: jetbrains-mono/jetbrains-mono.css
 ---
 
