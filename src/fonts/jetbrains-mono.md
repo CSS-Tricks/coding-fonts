@@ -10,7 +10,7 @@ license:
 cost: free
 ligatures: true
 italics: true
-variable: false
+variable: true
 stylesheet_url: https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap
 stylesheet_absolute: true
 ---
