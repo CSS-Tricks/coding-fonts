@@ -11,11 +11,11 @@
     "dev": "ELEVENTY_ENV=development eleventy --serve & npm run sass:watch",
     "sass:watch": "sass --watch src/assets/styles/sass/style.scss:src/assets/styles/style.css",
     "screenshots": "npm run screenshots:js && npm run screenshots:html && npm run screenshots:css && npm run screenshots:charmap",
-    "screenshots:js": "node take_screenshots.js --lang js --theme light --font \"$FONT\" && node take_screenshots.js --lang js --theme dark --font \"$FONT\"",
-    "screenshots:html": "node take_screenshots.js --lang html --theme light --font \"$FONT\" && node take_screenshots.js --lang html --theme dark --font \"$FONT\"",
-    "screenshots:css": "node take_screenshots.js --lang css --theme light --font \"$FONT\" && node take_screenshots.js --lang css --theme dark --font \"$FONT\"",
-    "screenshots:charmap": "node take_screenshots.js --lang charmap --theme light --font \"$FONT\" && node take_screenshots.js --lang charmap --theme dark --font \"$FONT\"",
-    "screenshots:all": "node take_screenshots.js --all true"
+    "screenshots:js": "node takeScreenshots.js --lang js --theme all --font \"$FONT\"",
+    "screenshots:html": "node takeScreenshots.js --lang html --theme all --font \"$FONT\"",
+    "screenshots:css": "node takeScreenshots.js --lang css --theme all --font \"$FONT\"",
+    "screenshots:charmap": "node takeScreenshots.js --lang charmap --theme all --font \"$FONT\"",
+    "screenshots:all": "node takeScreenshots.js --font all --lang all --theme all"
   },
   "repository": {
     "type": "git",

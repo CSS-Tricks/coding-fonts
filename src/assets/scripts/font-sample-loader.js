@@ -43,4 +43,6 @@ if (fontInfo) {
   });
   document.body.style.fontFamily = fontInfo.title;
   pre.style.fontFamily = fontInfo.title;
+} else {
+  console.warn(`${font} does not appear to be a valid font. Please check the font name.`);
 }
