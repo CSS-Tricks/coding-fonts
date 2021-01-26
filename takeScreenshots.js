@@ -61,7 +61,7 @@ const takeScreenshots = async (font, lang, theme) => {
     deviceScaleFactor: 2
   });
 
-  page.on('console', msg => console.warn('Browser Log:', msg.text()));
+  page.on('console', msg => console.warn(`Browser Log [${font}]: ${msg.text()}`));
 
   await page.goto(
     `http://localhost:8080/code_samples/${lang}?font=${font}&theme=${theme}`,

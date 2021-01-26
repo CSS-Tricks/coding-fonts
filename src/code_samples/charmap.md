@@ -3,7 +3,7 @@ layout: for_screenshot
 title: Character Map Sample
 ---
 
-<pre class="lang-text" style="font-size: 28px;"><code><span>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm</span>
+<pre class="lang-text" style="font-size: 24px;"><code><span>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm</span>
 <span>Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</span>
 <span>1 2 3 4 5 6 7 8 9 0 . , : ; … ! ¡ ? ¿</span>
 <span>· • * # ․ / ( ) { } [ ] - _ ‹ › " ' `</span></code>
@@ -39,6 +39,9 @@ Zeros
 Upper "O"s
 OOO
 </div>
+</div><div style="display: flex">
+All Together
+L|l1iI0Oo____
 </div>
 
 </pre>
