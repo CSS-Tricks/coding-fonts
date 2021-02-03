@@ -20,34 +20,10 @@ https://coding-fonts.css-tricks.com/
 
 Then make a Pull Request for it. You should be able to see a built preview on Netlify as part of the PR.
 
-## NPM Commands
+## Taking Screenshots
 
-Take all screenshots for one font:
+You can take screenshots using the included `takeScreenshots.js` file. The options are listed in the help screen below.
 
-```bash
-FONT='font-name' npm run screenshots
-```
-
-Take all screenshots:
-
-```bash
-npm run screenshots:all
-```
-
-Take specific language screenshots
-
-```bash
-FONT='font-name' npm run screenshots:js
-FONT='font-name' npm run screenshots:html
-FONT='font-name' npm run screenshots:css
-FONT='font-name' npm run screenshots:charmap
-```
-
-## Taking Screenshots Using takeScreenshots.js
-
-You can take control of the screenshots 
-
-takeScreenshots accepts the follow arguments:
 ```
 Options:
   --version    Show version number
@@ -68,3 +44,20 @@ node takeScreenshots.js -f source-code-pro -l all -t all
 ```
 
 It will spawn 8 Puppeteer instances (1 font * 4 languages * 2 themes = 8 instances) all at once to take the screenshots. This is usually fine and doesn't result in any issues but in the event you were to do this for all fonts as well, you'd spawn hundreds of instances which will almost always in a failure.
+
+## Additional Examples
+
+```bash
+# Take a screenshot of the Source Code Pro font, using the JavaScript code sample, and the dark theme.
+node takeScreenshots.js -f source-code-pro -l js -t dark
+
+# Take a screenshot of the Menlo font, using all of the code samples, and the light theme.
+node takeScreenshots.js -f menlo -l all -t light
+
+# Take a screenshot of all of the fonts, using all of the code samples, and all of the themes.
+node takeScreenshots.js -f all -l all -t all
+
+# Take a screenshot of the Input font, using all of the code samples, all of the themes, and do so in parallel
+node takeScreenshots.js -f input -l all -t all --parallel
+
+```
