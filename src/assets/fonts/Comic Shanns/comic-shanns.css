@@ -1,0 +1,5 @@
+@font-face {
+    font-family: 'Comic Shanns';
+    src: url('comic-shanns.otf') format('ttf'),
+      url('comic-shanns.ttf') format('otf');
+  }
