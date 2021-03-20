@@ -16,15 +16,30 @@ const args = yargs(process.argv.slice(2))
   .describe('t', 'Theme to use for screenshots')
   .alias('t', 'theme')
 
-  .describe('parallel', 'Run the screenshots in parallel\n ~ Be careful when running too many screenshots at once.')
+  .describe(
+    'parallel',
+    'Run the screenshots in parallel\n ~ Be careful when running too many screenshots at once.'
+  )
 
   .help('h')
   .alias('h', 'help')
 
-  .example('node $0 -f source-code-pro -l js -t dark', 'Take a screenshot of the Source Code Pro font, using the JavaScript code sample, and the dark theme.\n')
-  .example('node $0 -f menlo -l all -t light', 'Take a screenshot of the Menlo font, using all of the code samples, and the light theme.\n')
-  .example('node $0 -f all -l all -t all', 'Take a screenshot of all of the fonts, using all of the code samples, and all of the themes.\n')
-  .example('node $0 -f input -l all -t all --parallel', 'Take a screenshot of the Input font, using all of the code samples, all of the themes, and do so in parallel.')
+  .example(
+    'node $0 -f source-code-pro -l js -t dark',
+    'Take a screenshot of the Source Code Pro font, using the JavaScript code sample, and the dark theme.\n'
+  )
+  .example(
+    'node $0 -f menlo -l all -t light',
+    'Take a screenshot of the Menlo font, using all of the code samples, and the light theme.\n'
+  )
+  .example(
+    'node $0 -f all -l all -t all',
+    'Take a screenshot of all of the fonts, using all of the code samples, and all of the themes.\n'
+  )
+  .example(
+    'node $0 -f input -l all -t all --parallel',
+    'Take a screenshot of the Input font, using all of the code samples, all of the themes, and do so in parallel.'
+  )
 
   .demandOption(['lang', 'font', 'theme'])
 
@@ -61,7 +76,9 @@ const takeScreenshots = async (font, lang, theme) => {
     deviceScaleFactor: 2
   });
 
-  page.on('console', msg => console.warn(`Browser Log [${font}]: ${msg.text()}`));
+  page.on('console', (msg) =>
+    console.warn(`Browser Log [${font}]: ${msg.text()}`)
+  );
 
   await page.goto(
     `http://localhost:8080/code_samples/${lang}?font=${font}&theme=${theme}`,
@@ -79,26 +96,27 @@ const takeScreenshots = async (font, lang, theme) => {
 };
 
 const parseInputs = (fonts, langs, themes) => {
-  fonts = fonts === 'all'
-    ? fs.readdirSync('./src/fonts')
-        .filter((file) => file.endsWith('.md'))
-        .map((file) => file.replace('.md', '').toLocaleLowerCase())
-    : [fonts.toLocaleLowerCase()]
+  fonts =
+    fonts === 'all'
+      ? fs
+          .readdirSync('./src/fonts')
+          .filter((file) => file.endsWith('.md'))
+          .map((file) => file.replace('.md', '').toLocaleLowerCase())
+      : [fonts.toLocaleLowerCase()];
 
-  langs = langs === 'all'
-    ? samples.languages.map(lang => lang.value)
-    : [langs];
+  langs =
+    langs === 'all' ? samples.languages.map((lang) => lang.value) : [langs];
 
-  themes = themes === 'all'
-    ? samples.themes
-    : [themes];
+  themes = themes === 'all' ? samples.themes : [themes];
 
   return [fonts, langs, themes];
 };
 
 const run = async (fonts, langs, themes, parallel) => {
   console.log(`Running in ${parallel ? 'parallel' : 'serial'} mode`);
-  console.log(`Taking ${fonts.length * langs.length * themes.length} screenshots\n`);
+  console.log(
+    `Taking ${fonts.length * langs.length * themes.length} screenshots\n`
+  );
 
   const asyncForEach = async (array, callback) => {
     for (let i = 0; i < array.length; i++) {
@@ -113,7 +131,9 @@ const run = async (fonts, langs, themes, parallel) => {
           try {
             await takeScreenshots(font, lang, theme);
           } catch (e) {
-            console.error('\nAn error occurred. Please review the stack trace below and report the issue if necessary.\n');
+            console.error(
+              '\nAn error occurred. Please review the stack trace below and report the issue if necessary.\n'
+            );
             console.error(e);
             exit();
           }
@@ -127,7 +147,9 @@ const run = async (fonts, langs, themes, parallel) => {
           try {
             await takeScreenshots(font, lang, theme);
           } catch (e) {
-            console.error('\nAn error occurred. Please review the stack trace below and report the issue if necessary.\n');
+            console.error(
+              '\nAn error occurred. Please review the stack trace below and report the issue if necessary.\n'
+            );
             console.error(e);
             exit();
           }
@@ -135,7 +157,7 @@ const run = async (fonts, langs, themes, parallel) => {
       });
     });
   }
-}
+};
 
 const main = async () => {
   let fonts = args.font;
