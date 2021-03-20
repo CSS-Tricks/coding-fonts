@@ -81,7 +81,7 @@ const takeScreenshots = async (font, lang, theme) => {
   );
 
   await page.goto(
-    `http://localhost:8082/code_samples/${lang}?font=${font}&theme=${theme}`,
+    `http://localhost:8080/code_samples/${lang}?font=${font}&theme=${theme}`,
     {
       waitUntil: 'networkidle0',
       timeout: 100000
