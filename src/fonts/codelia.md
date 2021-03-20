@@ -2,7 +2,7 @@
 title: Codelia
 designers:
   - name: Toshi Omagari
-home_url: https://tosche.net/fonts/codelia
+home_url: https://tosche.net/fonts/comic-code
 license:
   - name: MyFonts Licensing
     url: https://www.myfonts.com/fonts/tabular-type-foundry/codelia?tab=licensing
