@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'iA Writer Mono';
+  src: url('iAWriterMonoS-Regular.woff2') format('woff2'),
+    url('iAWriterMonoS-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
