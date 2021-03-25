@@ -2,12 +2,12 @@
 title: Codelia
 designers:
   - name: Toshi Omagari
-home_url: https://tosche.net/fonts/comic-code
+home_url: https://tosche.net/fonts/codelia
 license:
   - name: MyFonts Licensing
     url: https://www.myfonts.com/fonts/tabular-type-foundry/codelia?tab=licensing
 cost: $11.54 - $299.99
-ligatures: truee
+ligatures: true
 italics: true
 variable: false
 stylesheet_url: Codelia/codelia.css
