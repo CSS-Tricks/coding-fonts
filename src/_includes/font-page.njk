@@ -55,6 +55,12 @@ layout: base
     {%- for theme in samples.themes -%}
       {%- for language in samples.languages -%}
         <div class="screenshot" data-theme="{{theme}}" data-language="{{language.value}}">
+
+          <!-- 
+            Sizes attribute for the for the two in the middle:
+            100vw - padding - left sidebar [- right sidebar]
+          -->
+
           <img
             alt="{{language.value}} example of {{title}} in {{theme}} mode"
             onerror="this.style.display='none'"
@@ -63,9 +69,10 @@ layout: base
               {{images.urlPrefixMedium}}{{images.imageLocation}}/screenshots/{{title | slug}}/{{language.value}}-{{theme}}.png 1200w,
               {{images.urlPrefixSmall}}{{images.imageLocation}}/screenshots/{{title | slug}}/{{language.value}}-{{theme}}.png 600w"
             sizes="
-              (max-width: 1350px) 50vw,
-              (max-width: 900px) 80vw,
-              96vw,
+              (min-width: 1629px) 903px,
+              (min-width: 1366px) calc(100vw - 166px - 246px - 314px),
+              (min-width: 900px) calc(100vw - 58px - 246px),
+              96vw
             "
           >
         </div>
