@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Native';
+  src: url('Native-Regular.woff2') format('woff2'),
+    url('Native-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Native';
+  src: url('Native-Italic.woff2') format('woff2'),
+    url('Native-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
