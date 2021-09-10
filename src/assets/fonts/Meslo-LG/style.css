@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Meslo LG L';
-    src: local('Meslo LG L Regular'),
+    font-family: 'Meslo LG';
+    src: local('Meslo LG Regular'),
         url('MesloLGL-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -8,8 +8,8 @@
 }
 
 @font-face {
-    font-family: 'Meslo LG L';
-    src: local('Meslo LG L Italic'),
+    font-family: 'Meslo LG';
+    src: local('Meslo LG Italic'),
         url('MesloLGL-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
@@ -17,8 +17,8 @@
 }
 
 @font-face {
-    font-family: 'Meslo LG L';
-    src: local('Meslo LG L Bold'),
+    font-family: 'Meslo LG';
+    src: local('Meslo LG Bold'),
         url('MesloLGL-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
@@ -26,8 +26,8 @@
 }
 
 @font-face {
-    font-family: 'Meslo LG L';
-    src: local('Meslo LG L Bold Italic'),
+    font-family: 'Meslo LG';
+    src: local('Meslo LG Bold Italic'),
         url('MesloLGL-BoldItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;

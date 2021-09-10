@@ -1,5 +1,5 @@
 ---
-title: Meslo LG L DZ
+title: Meslo LG
 designers:
   - name: André Berg
 home_url: https://github.com/andreberg/Meslo-Font
@@ -10,7 +10,7 @@ cost: Free for non-commercial use
 ligatures: false
 italics: true
 variable: false
-stylesheet_url: Meslo-LG-L-DZ/style.css
+stylesheet_url: Meslo-LG/style.css
 ---
 
 Meslo LG is a customized version of Apple’s Menlo-Regular font
@@ -27,5 +27,3 @@ adjust the globally very affecting stuff that results in vertical spacing.
 The LG in Meslo LG stands for Line Gap. The idea behind it is to allow the user
 to have some control over vertical spacing by choosing one of three line gap
 variants: small, medium and large (Meslo LG S, Meslo LG M and Meslo LG L respectively).
-
-The DZ stands for dotted zero.
