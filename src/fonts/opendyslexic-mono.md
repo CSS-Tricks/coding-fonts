@@ -8,7 +8,7 @@ license:
     url: https://github.com/antijingoist/opendyslexic/blob/master/OFL.txt
 cost: free
 ligatures: false
-italic: false
+italics: false
 variable: false
 stylesheet_url: OpenDyslexicMono/OpenDyslexicMono.css
 ---

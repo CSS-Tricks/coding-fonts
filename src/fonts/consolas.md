@@ -8,7 +8,7 @@ license:
     url: https://docs.microsoft.com/en-us/typography/font-list/consolas#licensing-and-redistribution-info
 cost: Comes with Windows
 ligatures: false
-italic: false
+italics: false
 variable: false
 stylesheet_url: Consolas/consolas.css
 ---

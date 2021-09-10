@@ -8,7 +8,7 @@ license:
   - name: Unknown (Probably the same as Source Code Pro?)
 cost: free
 ligatures: true
-italic: true
+italics: true
 variable: false
 stylesheet_url: Hasklig-1.1/stylesheet.css
 ---
