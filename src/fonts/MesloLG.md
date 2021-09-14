@@ -14,16 +14,15 @@ stylesheet_url: Meslo-LG/style.css
 ---
 
 Meslo LG is a customized version of Apple’s Menlo-Regular font
-(which is a customized Bitstream Vera Sans Mono).
+(which is a customized Bitstream Vera Sans Mono). It widens the
+characters slightly and adjusts the horizontal baseline alignment
+of the asterisk.
 
-I really like Menlo but I do have my nitpicky gripes with it:
+The LG in Meslo LG stands for Line Gap. The idea behind it is to
+allow the user to have some control over vertical spacing by
+choosing one of three line gap variants: small, medium and large
+(Meslo LG S, Meslo LG M, and Meslo LG L respectively).
 
-The default vertical (line) spacing is just way to cramped for me, and also
-I am not particularily fond of the horizontal baseline alignment of the asterisk.
-That’s why I decided to customize Menlo, regarding these “issues”.
-The tricky part is keeping all the custom tables, hints, etc. intact when you
-adjust the globally very affecting stuff that results in vertical spacing.
-
-The LG in Meslo LG stands for Line Gap. The idea behind it is to allow the user
-to have some control over vertical spacing by choosing one of three line gap
-variants: small, medium and large (Meslo LG S, Meslo LG M and Meslo LG L respectively).
+There is also a DZ version of each of these fonts (Meslo LG S DZ,
+Meslo LG M DZ, and Meslo LG L DZ), which replaces the slash version
+of the zero character with one with a center dot.
