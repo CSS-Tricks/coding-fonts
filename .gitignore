@@ -105,3 +105,6 @@ dist
 
 # Sass
 .sass-cache
+
+# OS related files
+.DS_Store
