@@ -7,9 +7,9 @@ license:
   - name: OFL-1.1 License
     url: https://github.com/microsoft/cascadia-code/blob/main/LICENSE
 cost: free
-italics: false
+italics: true
 ligatures: true
-variable: false
+variable: true
 stylesheet_url: Cascadia Code/cascadia-code.css
 ---
 
