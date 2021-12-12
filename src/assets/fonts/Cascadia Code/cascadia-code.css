@@ -4,7 +4,8 @@
   font-style: normal;
 }
 
-/* No italics */
-.token.comment {
-  font-style: normal;
+@font-face {
+  src: url('./CascadiaCodeItalic.woff2');
+  font-family: 'Cascadia Code';
+  font-style: italic;
 }
